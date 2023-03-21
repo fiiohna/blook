@@ -141,13 +141,13 @@ Home
   background-size: cover;
   background-position: 100%;
   background-repeat: no-repeat;
-  padding-bottom: 350px;
+  padding-bottom: 150px;
 }  
 
 .leftContent {
   text-align: center;
   position:relative;
-  top: 120px;
+  top: 80px;
 }
 
 .float-child.right {
@@ -159,9 +159,16 @@ Home
 .rightContent {
   text-align: center;
 }
+
+.leftContent p {
+  color: #FFFFFF;
+}
 /************************************************************
 Activities
 *************************************************************/
+.container1 {
+  width: 100%;
+}
 .activitiesContainer{
   position: relative;
   text-align: center;
@@ -176,10 +183,9 @@ Activities
 }
 
 .activitiesSearchItem {
-  /* background-color: white; */
   border: 3px solid #E58F65;
   position: absolute;
-  top: 10%;
+  top: 25%;
   left: 10%;
   justify-content: space-around;
   padding: 5px;
@@ -204,3 +210,6 @@ Activities
   margin-right: 10px;
 }
 
+.container2 {
+  width: 100%;
+}
