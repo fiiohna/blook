@@ -1,9 +1,10 @@
 import React from "react";
 import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // pages
 import Home from "./pages/Home"
-import About from "./pages/About"
+import Activities from "./pages/Activities"
 
 // layouts
 import RootLayout from "./layouts/RootLayout";
@@ -15,18 +16,19 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
+      <Route path="activities" element={<Activities />} />
       <Route path="login" element={<LoginLayout />}>
         <Route path="signin" element={<Signin />}/>
         <Route path="signup" element={<Signup />}/>
       </Route>
+      {/* Profilepage */}
     </Route>
   )
 )
 
 function App() {
   return (
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
   );
 }
 
