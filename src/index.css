@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/* icon packages
+https://fontawesome.com
+*/
+
 /* color palette 
     #E58F65
     #D05353
     #B8D0EB
     #FFFFFF
 */
+
 :root {
   --primary: #E58F65;
   --secondary: #FFFFFF;
@@ -17,37 +23,70 @@ body {
   background: var(--secondary);
 }
 
-/* navbar */
-header nav {
+main {
+  font-family: "Raleway", "Helvetica Neue";
+}
+
+/************************************************************
+Button
+*************************************************************/
+.button-submit {
+  position: absolute;
+  border-radius: 5px;
+  right: 0px;
+  z-index: 2;
+  border: none;
+  top: 25%;
+  height: 30px;
+  cursor: pointer;
+  color: white;
+  background-color: #E58F65;
+  transform: translateX(-70px);
+}
+
+.button-submit:hover {
+  background-color:#B8D0EB;
+  border-color:transparent;
+}
+/************************************************************
+RootLayout
+*************************************************************/
+.headerContainer {
   display: flex;
-  gap: 16px;
-  margin: 0 auto;
-  padding: 10px;
+  background: #B8D0EB;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.headerContainer .logo{
+  width: auto;
+  height: 90px;
+  object-fit: cover;
+  object-position: 25% 25%; 
+  padding: 20px;
+}
+
+.headerList {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  margin: auto;
+  padding: 30px;
+  width: 100%;
   background: #B8D0EB;
 }
 
-header nav h1 {
-  border-bottom: 3px solid var(--primary);
+
+.headerListItem:hover {
+  color: black;
+  border: 2px solid #E58F65;
+  border-radius: 30px;
 }
 
-header nav a {
-  padding: 6px;
-  border-radius: 4px;
-}
-
-header nav a.active { 
-  background: var(--primary);
-}
-
-.logo{
-  width: 150px;
-  height: auto;
-  object-fit: cover;
-  object-position: 25% 25%; 
-
-}
-
-/* login layout */
+/************************************************************
+LoginLayout
+*************************************************************/
 .login-layout nav {
   display: flex;
   justify-content: center;
@@ -67,11 +106,6 @@ header nav a.active {
   background: var(--primary);
 }
 
-
-/* page content*/
-main {
-  margin: 40px auto;
-}
 
 /* sign up form */
 .signup {
@@ -94,3 +128,79 @@ form input, form textarea {
 form label span {
   margin-bottom: 10px;
 }
+
+/************************************************************
+Home
+*************************************************************/
+
+.float-child.left {
+  width: 60%;
+  height: auto;
+  float: left;
+  background-image: url("../src/img/fun4.jpg");
+  background-size: cover;
+  background-position: 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 350px;
+}  
+
+.leftContent {
+  text-align: center;
+  position:relative;
+  top: 120px;
+}
+
+.float-child.right {
+  width: 40%;
+  float: right;
+  padding: 20px;
+}  
+
+.rightContent {
+  text-align: center;
+}
+/************************************************************
+Activities
+*************************************************************/
+.activitiesContainer{
+  position: relative;
+  text-align: center;
+  color: white;
+  width: 100%;
+  height: auto;
+}
+
+.activitiesContainer img{
+  object-fit: fill;
+  width: 100%;
+}
+
+.activitiesSearchItem {
+  /* background-color: white; */
+  border: 3px solid #E58F65;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  justify-content: space-around;
+  padding: 5px;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.activitiesSearchText {
+  border: none;
+  border-radius: 5px;
+  width: 90%;
+  height: 50px;
+  margin: 0 5px 0 0;
+}
+
+.activitiesSearchButton {
+  margin-left: -100px;
+}
+
+.activitiesIcon {
+  width: 25px;
+  margin-right: 10px;
+}
+
