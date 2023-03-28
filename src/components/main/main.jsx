@@ -14,6 +14,7 @@ import {HiOutlineClipboardCheck, HiOutlineLocationMarker} from 'react-icons/hi'
 
 // THIS IS HARD-CODED HERE!!!!
 
+
 const Data = [
     {
         id: 1,
@@ -49,6 +50,13 @@ const Main = () => {
 
     useEffect(() => {
         aos.init({duration: 2000})
+        fetch('http://localhost:5001/activity')
+      .then((response) => response.json())
+      .then((data) => {
+         console.log(data);
+         
+      });
+        
     }, [])
 
     return (
