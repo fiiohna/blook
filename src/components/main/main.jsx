@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import './main.css'
 import img from '../../assets/img.jpg'
 import img2 from '../../assets/img2.jpg'
@@ -13,6 +13,7 @@ import 'aos/dist/aos.css'
 import {HiOutlineClipboardCheck, HiOutlineLocationMarker} from 'react-icons/hi'
 
 // THIS IS HARD-CODED HERE!!!!
+
 
 const Data = [
     {
@@ -47,9 +48,18 @@ const Data = [
 
 const Main = () => {
 
+    const [activities, setActivity] = useState([]);
     useEffect(() => {
         aos.init({duration: 2000})
+        fetch('http://localhost:5001/activity')
+        .then((response) => response.json())
+        .then((data) => {
+        setActivity(data.data.activities);
+      });
+
+        
     }, [])
+    
 
     return (
         <section className="main container section">
@@ -61,26 +71,26 @@ const Main = () => {
 
             <div className="secContent grid">
                 {
-                    Data.map(({id, imgSrc, destTitle, location, grade, fees, description}) => {
+                    activities.map((activity) => {
                         return(
-                            <div key={id} data-aos="fade-up" className="singleDestination">
+                            <div key={activity.id} data-aos="fade-up" className="singleDestination">
                                 {/* it will return single id from the map array */}
-                                <div className="imageDiv">
+                                {/* <div className="imageDiv">
                                     <img src={imgSrc} alt={destTitle} />
-                                </div>
+                                </div> */}
                                 <div className="cardInfo">
-                                    <h4 className="destTitle">{destTitle}</h4>
+                                    <h4 className="destTitle">{activity.name}</h4>
                                     <span className="continent flex"><HiOutlineLocationMarker className='icon'/></span>
-                                    <span className="name">{location}</span>
+                                    <span className="name">{activity.address}</span>
 
                                     <div className="fees flex">
                                         <div className="price">
-                                            <h3>{fees}</h3>
+                                            <h3>USD{activity.price}</h3>
                                         </div>
                                     </div>
 
                                     <div className="desc">
-                                        <p>{description}</p>
+                                        <p>{activity.description}</p>
                                     </div>
 
                                     <button className='btn flex'>
