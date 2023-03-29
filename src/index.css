@@ -100,9 +100,9 @@ input {
 
 body{ 
   /* margin: 0;
-  padding: 0px;
+  padding: 0px; */
   font-family: "Raleway", "Helvetica Neue";
-  background: var(--secondary); */
+  /* background: var(--secondary); */
   background : var(--bodyColor); 
 }
 
