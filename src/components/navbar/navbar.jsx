@@ -5,6 +5,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { TbGridDots } from 'react-icons/tb';
 
 
+
 const Navbar = () => {
     const [active, setActive] = useState('navBar')
 
@@ -32,20 +33,21 @@ const Navbar = () => {
                             <a href="/#" className="navLink">Home</a>
                         </li>
                         <li className="navItem">
+                            <a href="/#" className="navLink">Activities</a>
+                        </li>
+                        {/* <li className="navItem">
                             <a href="/#" className="navLink">Home</a>
+                        </li> */}
+                        <li className="navItem">
+                            <a href="#" className="navLink">Payment</a>
+                            {/* <NavLink to="./payment/payment" className="navLink">Payment</NavLink> */}
                         </li>
                         <li className="navItem">
-                            <a href="/#" className="navLink">Home</a>
-                        </li>
-                        <li className="navItem">
-                            <a href="/#" className="navLink">Home</a>
-                        </li>
-                        <li className="navItem">
-                            <a href="/#" className="navLink">Home</a>
+                            <a href="/#" className="navLink">Sign Up</a>
                         </li>
 
                         <button className='btn'>
-                            <a href="/#">Sign Up</a>
+                            <a href="/#">Log In</a>
                         </button>
                     </ul>
 
