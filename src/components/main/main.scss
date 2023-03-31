@@ -1,10 +1,9 @@
 :root {
   /* --primary: #E58F65;
     --secondary: #FFFFFF; */
-  --PrimaryColor: hsl(199, 100%, 33%);
-  --SecondaryColor: hsl(187, 85%, 43%);
-  --gradientColor: linear-gradient
-    (to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --PrimaryColor: #E58F65;
+  --SecondaryColor: #D05353;
+  --gradientColor: #B8D0EB;
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(201, 33%, 16%);
   --textColor: hsl(240, 4%, 36%);
@@ -101,39 +100,39 @@
             }
           }
 
-          .fees {
-            width: 100%;
-            justify-content: space-between;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-top: 1.5px solid var(--greyText);
-            border-bottom: 1.5px solid var(--greyText);
+        .fees {
+          width: 100%;
+          justify-content: space-between;
+          padding: 1rem;
+          margin: 1rem 0;
+          border-top: 1.5px solid var(--greyText);
+          border-bottom: 1.5px solid var(--greyText);
 
-            .grade {
-              color: var(--textColor);
-              max-width: 100px;
-              line-height: 20px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-
-            .price {
-              font-size: 2rem;
-              color: var(--blackColor);
-              align-items: right;
-            }
-          }
-
-          .desc {
-            font-size: 13.5px;
+          .grade {
             color: var(--textColor);
-            font-weight: 500;
+            max-width: 100px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
+
+          .price {
+            font-size: 2rem;
+            color: var(--blackColor);
+            align-items: right;
+          }
+        }
+
+        .desc {
+          font-size: 13.5px;
+          color: var(--textColor);
+          font-weight: 500;
+        }
 
           .btn {
             margin-top: 1rem;
-            color: var(--whiteColor);
+            color: var(--PrimaryColor);
             font-weight: 600;
             justify-content: space-between;
             gap: 0.5rem;
