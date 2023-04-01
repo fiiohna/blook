@@ -1,93 +1,244 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-
-/* icon packages
-https://fontawesome.com
-*/
-
+@import url('https://fonts.googleapis.com/css?family=Raleway:wght@300;400;500;600;700&display=swap');
 /* color palette 
     #E58F65
     #D05353
     #B8D0EB
     #FFFFFF
 */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */
+
+*{ 
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", "Helvetica Neue";
+}
 
 :root {
-  --primary: #E58F65;
-  --secondary: #FFFFFF;
+  /* --primary: #E58F65;
+    --secondary: #FFFFFF; */
+  --PrimaryColor: #E58F65;
+  --SecondaryColor: #D05353;
+  --gradientColor: #B8D0EB;
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 235);
+  --cardHover: rgb(255, 255, 255);
 }
 
-body {
-  margin: 0;
-  padding: 0px;
-  font-family: "Raleway", "Helvetica Neue";
-  background: var(--secondary);
+html {
+  scroll-behavior: smooth;
 }
 
-main {
-  font-family: "Raleway", "Helvetica Neue";
+a{
+  text-decoration: none;
 }
 
-/************************************************************
-Button
-*************************************************************/
-.button-submit {
-  position: absolute;
-  border-radius: 5px;
-  right: 0px;
-  z-index: 2;
-  border: none;
-  top: 25%;
-  height: 30px;
+li {
+  list-style: none;
+}
+
+.section {
+  padding: 4rem 0 2rem;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.icon {
+  font-size: 2rem;
   cursor: pointer;
-  color: white;
-  background-color: #E58F65;
-  transform: translateX(-70px);
 }
 
-.button-submit:hover {
-  background-color:#B8D0EB;
-  border-color:transparent;
+.blookicon {
+  width: 100px;
+  cursor: pointer;
 }
-/************************************************************
-RootLayout
-*************************************************************/
-.headerContainer {
-  display: flex;
-  background: #B8D0EB;
+
+.flex {
+  display:flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+}
+
+.btn {
+  padding: .6rem 1.5rem;
+  background: var(--PrimaryColor);
+  border-radius: 3rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn a {
+  color: var(--whiteColor);
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: var(--SecondaryColor);;
+}
+
+.btn:focus {
+  background:  #E58F65;
+}
+
+img, video {
   width: 100%;
-  z-index: 1000;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  height: auto;
 }
 
-.headerContainer .logo{
-  width: auto;
-  height: 90px;
-  object-fit: cover;
-  object-position: 25% 25%; 
+input {
+  font-size: 100%;
+}
+
+body{ 
+  /* margin: 0;
+  padding: 0px; */
+  font-family: "Raleway", "Helvetica Neue";
+  /* background: var(--secondary); */
+  background : var(--bodyColor); 
+}
+
+/* media */
+@media screen and (min-width: 1240px){
+  .container {
+    width: 80% !important;
+    margin: auto !important;
+  }
+
+  .section {
+    padding: 6rem 0 4rem;
+  }
+}
+
+@media screen and (min-width: 2560px){
+  body{
+    zoom: 1.7;
+  }
+}
+
+.Tabs {
+  display: table-column;
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  background: var(--whiteColor);
+  margin: 3.5rem auto 1.5rem;
+  padding: 2rem 1rem;
+  color: var(--PrimaryColor);
+  border-radius: 2rem;
+  @media (max-width: 769px) {
+    padding: 2rem 0;
+  }
+}
+
+ul.nav {
+  width: 60%;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--PrimaryColor);
+  border-radius: 2rem;
+  padding-left: 0px;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+}
+ul.nav li {
+  width: 50%;
+  padding: 1rem;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.7s;
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+ul.nav li:nth-child(2) {
+  border-radius: 0;
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+ul.nav li:hover {
+  background: var(--PrimaryColor);
+  color: var(--whiteColor);
+}
+ul.nav li.active {
+  background: var(--PrimaryColor);
+  color: var(--whiteColor)
+}
+
+.reviewsTab p, .pendingTab p {
+  font-size: 2rem;
+  text-align: start;
+}
+
+.reviewList {
+  align-items: start;
+  margin: 5px;
   padding: 20px;
 }
 
-.headerList {
-  display: flex;
-  align-items: center;
-  gap: 90px;
-  margin: auto;
-  padding: 30px;
+.icon-style {
+  border-bottom: 2px solid grey;
+  padding: 10px;
   width: 100%;
+}
+
+.reviewDates {
+  color: black;
+}
+
+
+
+
+
+
+/* navbar */
+/* header nav {
+  display: flex;
+  gap: 16px;
+  margin: 0 auto;
+  padding: 10px;
   background: #B8D0EB;
 }
 
-
-.headerListItem:hover {
-  color: black;
-  border: 2px solid #E58F65;
-  border-radius: 30px;
+header nav h1 {
+  border-bottom: 3px solid var(--primary);
 }
 
-/************************************************************
-LoginLayout
-*************************************************************/
-.login-layout nav {
+header nav a {
+  padding: 6px;
+  border-radius: 4px;
+}
+
+header nav a.active { 
+  background: var(--primary);
+}
+
+.logo{
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+  object-position: 25% 25%; 
+
+} */
+
+/* login layout */
+/* .login-layout nav {
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -104,11 +255,16 @@ LoginLayout
 }
 .login-layout nav a.active {
   background: var(--primary);
+} */
+
+
+/* page content*/
+/* main {
+  margin: 40px auto;
 }
 
-
 /* sign up form */
-.signup {
+/* .signup {
   display: inline-block;
   text-align: center;
   justify-content: center;
@@ -127,89 +283,4 @@ form input, form textarea {
 }
 form label span {
   margin-bottom: 10px;
-}
-
-/************************************************************
-Home
-*************************************************************/
-
-.float-child.left {
-  width: 60%;
-  height: auto;
-  float: left;
-  background-image: url("../src/img/fun4.jpg");
-  background-size: cover;
-  background-position: 100%;
-  background-repeat: no-repeat;
-  padding-bottom: 150px;
-}  
-
-.leftContent {
-  text-align: center;
-  position:relative;
-  top: 80px;
-}
-
-.float-child.right {
-  width: 40%;
-  float: right;
-  padding: 20px;
-}  
-
-.rightContent {
-  text-align: center;
-}
-
-.leftContent p {
-  color: #FFFFFF;
-}
-/************************************************************
-Activities
-*************************************************************/
-.container1 {
-  width: 100%;
-}
-.activitiesContainer{
-  position: relative;
-  text-align: center;
-  color: white;
-  width: 100%;
-  height: auto;
-}
-
-.activitiesContainer img{
-  object-fit: fill;
-  width: 100%;
-}
-
-.activitiesSearchItem {
-  border: 3px solid #E58F65;
-  position: absolute;
-  top: 25%;
-  left: 10%;
-  justify-content: space-around;
-  padding: 5px;
-  border-radius: 5px;
-  width: 80%;
-}
-
-.activitiesSearchText {
-  border: none;
-  border-radius: 5px;
-  width: 90%;
-  height: 50px;
-  margin: 0 5px 0 0;
-}
-
-.activitiesSearchButton {
-  margin-left: -100px;
-}
-
-.activitiesIcon {
-  width: 25px;
-  margin-right: 10px;
-}
-
-.container2 {
-  width: 100%;
-}
+}  */
