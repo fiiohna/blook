@@ -92,11 +92,11 @@
 
 .recommendation .secContent .singleDestination .cardInfo {
     padding: 1rem;
-    background-color: rgba(113, 113, 247, 0.993);
+    background-color: var(--cardBG);
 }
 
 .recommendation .secContent .singleDestination .cardInfo .name {
-    color: var(--blackColor);
+    color: var(--textColor);
     font-size: 1.25rem;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .recommendation .secContent .singleDestination .cardInfo .continent .icon .name {
-    color: var(--textColor);
+    color: var(--blackColor);
     font-size: 400;
     font-size: 14px;
 }

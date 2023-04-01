@@ -20,37 +20,37 @@
 import React from "react";
 
 export default function Activities() {
-    const [index, setIndex] = useState(0);
+    // const [index, setIndex] = useState(0);
 
-    const handleSelect = (selectedIndex, e) => {
-      setIndex(selectedIndex);
-    };
+    // const handleSelect = (selectedIndex, e) => {
+    //   setIndex(selectedIndex);
+    // };
   
-    return (
-        <div>
-                <Carousel activeIndex={index} onSelect={handleSelect}>
-                            <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src={img}
-                                    alt="First slide"
-                                />
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src={img2}
-                                    alt="Second slide"
-                                />
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src={img3}
-                                    alt="Third slide"
-                                />
-                            </Carousel.Item>
-                        </Carousel>
-        </div>
-    )
+    // return (
+    //     <div>
+    //             <Carousel activeIndex={index} onSelect={handleSelect}>
+    //                         <Carousel.Item>
+    //                             <img
+    //                                 className="d-block w-100"
+    //                                 src={img}
+    //                                 alt="First slide"
+    //                             />
+    //                         </Carousel.Item>
+    //                         <Carousel.Item>
+    //                             <img
+    //                                 className="d-block w-100"
+    //                                 src={img2}
+    //                                 alt="Second slide"
+    //                             />
+    //                         </Carousel.Item>
+    //                         <Carousel.Item>
+    //                             <img
+    //                                 className="d-block w-100"
+    //                                 src={img3}
+    //                                 alt="Third slide"
+    //                             />
+    //                         </Carousel.Item>
+    //                     </Carousel>
+    //     </div>
+    // )
 }

@@ -73,7 +73,7 @@
 }
 .main .secContent .singleDestination .cardInfo {
   padding: 1rem;
-  background-color: rgba(113, 113, 247, 0.993);
+  background-color: var(--cardBG);
 }
 .main .secContent .singleDestination .cardInfo .name {
   color: var(--blackColor);
@@ -137,7 +137,7 @@
 
 .main .activitiesSearchItem .activitiesSearchText{
   width: 75%;
-  border: 2px solid black;
+  border: 2px solid var(--gradientColor);
   box-sizing: border-box;
   padding: 16px 32px;
 }
@@ -145,6 +145,7 @@
 input[type=text]:focus {
   background-color: var(--gradientColor);
   box-shadow: 10px 10px var(--PrimaryColor);
+  color: black;
 }
 
 button {
@@ -153,7 +154,7 @@ button {
   border: 1px solid var(--gradientColor);
   cursor: pointer;
   background-color: var(--gradientColor);
-  border: 2px solid black;
+  border: 2px solid var(--gradientColor);
 }
 
 button:hover {

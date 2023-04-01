@@ -85,7 +85,7 @@ export default function Recommendation() {
 
                                         <div className="fees flex">
                                             <div className="price">
-                                                <h3>{fees}</h3>
+                                                <h3>SGD{fees}</h3>
                                             </div>
                                         </div>
 

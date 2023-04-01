@@ -112,7 +112,7 @@
 
 // export default Main
 
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './main.css'
 import img from '../../assets/img.jpg'
 import img2 from '../../assets/img2.jpg'
@@ -161,17 +161,30 @@ const Data = [
 ]
 
 const Main = () => {
+    const [activities, setActivities] = useState(Data)
+    const [searchQuery, setSearchQuery] = useState('')
 
     useEffect(() => {
         aos.init({ duration: 2000 })
     }, [])
 
+    const handleSearch = (event) => {
+        setSearchQuery(event.target.value);
+      };
+    
+      useEffect(() => {
+        const filteredActivities = Data.filter((activity) =>
+          activity.name.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        setActivities(filteredActivities);
+      }, [searchQuery]);
+
     return (
         <section className="main container section">
             <div className="activitiesSearchItem">
                 <span style={{marginRight: "20px"}}><FaSearch/></span>
-                <input type="text" placeholder="What do you want to do?" className="activitiesSearchText"></input>
-                <button type="submit" className="button-submit">Search</button>
+                <input type="text" placeholder="What do you want to do?" className="activitiesSearchText" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}></input>
+                <button type="submit" className="button-submit" onClick={handleSearch}>Search</button>
             </div>
 
             <div className="secTitle">
@@ -182,26 +195,26 @@ const Main = () => {
 
             <div className="secContent grid">
                 {
-                    Data.map(({ id, imgSrc, name, address, grade, fees, description }) => {
+                    activities.map((activity) => {
                         return (
-                            <div key={id} data-aos="fade-up" className="singleDestination">
+                            <div key={activity.id} data-aos="fade-up" className="singleDestination">
                                 {/* it will return single id from the map array */}
                                 <div className="imageDiv">
-                                    <img src={imgSrc} alt={name} />
+                                    <img src={activity.imgSrc} alt="Activity img" />
                                 </div>
                                 <div className="cardInfo">
-                                    <h4 className="name">{name}</h4>
+                                    <h4 className="name">{activity.name}</h4>
                                     <span className="continent flex"><HiOutlineLocationMarker className='icon' /></span>
-                                    <span className="name">{address}</span>
+                                    <span className="name">{activity.address}</span>
 
                                     <div className="fees flex">
                                         <div className="price">
-                                            <h3>{fees}</h3>
+                                            <h3>SGD{activity.fees}</h3>
                                         </div>
                                     </div>
 
                                     <div className="desc">
-                                        <p>{description}</p>
+                                        <p>{activity.description}</p>
                                     </div>
 
                                     <button className='btn flex'>
