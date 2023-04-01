@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import img from '../../assets/img4.jpg'
 import './profilep.css'
 import Tabs from "../TabComponent/tabs";
+import Coupons from "../coupon/coupon";
 
 
 
@@ -55,6 +56,10 @@ const ProfilePage = () =>{
 
             <div className="row">
                 <Tabs />
+            </div>
+
+            <div className="row">
+                <Coupons/>
             </div>
         </div>
 
