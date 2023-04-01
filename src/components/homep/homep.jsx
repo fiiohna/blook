@@ -29,25 +29,25 @@ const Homep = () => {
             <div className="homeContent container">
                 <div className="textDiv">
                     <span data-aos="fade-up" className="smallText">
-                        Our Packages
+                    BRINGING THE BEST ACTIVITIES TO YOU
                     </span>
                     <h1 data-aos="fade-up" className="homeTitle">
-                        Search for your fun
+                        Search for your <span style={{color: "#E58F65"}}>fun</span>
                     </h1>
                 </div>
 
-                <div data-aos="fade-up" className="cardDiv grid">
+                {/* <div data-aos="fade-up" className="cardDiv grid">
                     <div className="destinationInput">
                         <label htmlFor="city">
                             Search for your destination:
                         </label>
                         <div className="input flex">
-                            <input type="text" placeholder='Enter name here'/>
+                            <input type="text" placeholder='Enter name here'/> */}
                             {/* <GrLocation className='icon'/> */}
-                        </div>
-                    </div>
+                        {/* </div>
+                    </div> */}
 
-                    <div className="dateInput">
+                    {/* <div className="dateInput">
                         <label htmlFor="date">
                             Select a date:
                         </label>
@@ -66,15 +66,15 @@ const Homep = () => {
                         <div className="input flex">
                             <input type="range" max="5000" min="1000"/>
                         </div>
-                    </div>
+                    </div> */}
 
-                    <div className="searchOptions flex">
+                    {/* <div className="searchOptions flex">
                         <HiFilter className="icon"/>
                         <span>More Filters</span>
                     </div>
-                </div>
+                </div> */}
 
-                <div data-aos="fade-up" className="homeFooterIcons flex">
+                {/* <div data-aos="fade-up" className="homeFooterIcons flex">
                     <div className="rightIcons">
                         <FiFacebook className="icon"/>
                         <AiOutlineInstagram className="icon"/>
@@ -84,7 +84,7 @@ const Homep = () => {
                         <BsListTask className="icon"/>
                         <TbApps className="icon"/>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     )

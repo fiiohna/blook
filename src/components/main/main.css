@@ -1,10 +1,9 @@
 :root {
   /* --primary: #E58F65;
     --secondary: #FFFFFF; */
-  --PrimaryColor: hsl(199, 100%, 33%);
-  --SecondaryColor: hsl(187, 85%, 43%);
-  --gradientColor: linear-gradient
-    (to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --PrimaryColor: #E58F65;
+  --SecondaryColor: #D05353;
+  --gradientColor: #B8D0EB;
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(201, 33%, 16%);
   --textColor: hsl(240, 4%, 36%);
@@ -127,6 +126,36 @@
 .main .secContent .singleDestination .cardInfo .continent .btn .icon {
   align-self: center;
   font-size: 18px;
+}
+
+
+.main  .activitiesSearchItem {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.main .activitiesSearchItem .activitiesSearchText{
+  width: 75%;
+  border: 2px solid var(--gradientColor);
+  box-sizing: border-box;
+  padding: 16px 32px;
+}
+
+input[type=text]:focus {
+  background-color: var(--gradientColor);
+  box-shadow: 10px 10px var(--PrimaryColor);
+}
+
+button {
+  padding: 16px 32px;
+  font-size: 17px;
+  border: 1px solid var(--gradientColor);
+  cursor: pointer;
+  background-color: var(--gradientColor);
+}
+
+button:hover {
+  background-color: var(--PrimaryColor);
 }
 
 @media screen and (max-width: 500px) {

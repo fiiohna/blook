@@ -2,6 +2,7 @@ import { TypeAnimation } from "react-type-animation";
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Homep from '../components/homep/homep';
+import Main from '../components/main/main';
 
 /* images */
 import deal1 from "../img/deals/deal1.png";
@@ -16,7 +17,10 @@ export default function Home() {
     // };
 
     return (
-        <Homep></Homep>
+        <>
+            <Homep></Homep>
+            <Main></Main>
+        </>
         // <div class="homeContainer">
         //     <div class="row">
         //         <div class="float-child left">
