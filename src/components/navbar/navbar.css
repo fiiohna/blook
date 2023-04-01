@@ -27,28 +27,18 @@
   box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
 }
 .header .logo {
-  color: var(--blackColor);
-  height: 40px;
-  width: auto;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+  object-position: 25% 25%; 
 }
 .header .logo .icon {
   font-size: 25px;
   color: var(--PrimaryColor);
   transform: translateY(5px);
 }
-.header .toggleNavBar .icon {
-  font-size: 25px;
-  color: var(--PrimaryColor);
-}
-.header .toggleNavBar:hover.icon {
-  color: var(--SecondaryColor);
-}
-
 @media screen and (max-width: 768px) {
-  .navBar {
+  .header .navBar {
     position: absolute;
     background: var(--whiteColorDeam);
     height: -moz-max-content;
@@ -63,42 +53,51 @@
     box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
     transition: 0.5s ease-in-out;
   }
-  .navBar .navLists {
+  .header .navBar .navLists {
     flex-direction: column;
     justify-content: center;
     width: 100%;
     margin: auto;
     padding: 0.5rem 0;
   }
-  .navBar .navLists .navItem {
+  .header .navBar .navLists .navItem {
     padding: 0.5rem 0;
     color: var(--textColor);
     font-size: 0.9rem;
     font-weight: 600;
   }
-  .navBar .navLists .navItem:hover {
+  .header .navBar .navLists .navItem:hover {
     color: var(--PrimaryColor);
   }
-  .navBar .navLists .btn {
+  .header .navBar .navLists .btn {
     margin-top: 1rem;
   }
-  .navBar .navLists .btn a {
+  .header .navBar .navLists .btn a {
     font-weight: 600;
     color: var(--whiteColor);
+    text-decoration: none;
   }
-  .navBar .closeNavBar {
+  .header .navBar .closeNavBar {
     position: absolute;
     top: 1rem;
     right: 1.5rem;
     color: var(--PrimaryColor);
   }
-  .navBar .closeNavBar:hover {
+  .header .navBar .closeNavBar:hover {
     color: var(--SecondaryColor);
   }
-  .activeNavBar {
+  .header .activeNavBar {
     top: 7rem;
   }
 }
+.header .toggleNavBar .icon {
+  font-size: 25px;
+  color: var(--PrimaryColor);
+}
+.header .toggleNavBar:hover.icon {
+  color: var(--SecondaryColor);
+}
+
 @media screen and (min-width: 769px) {
   .toggleNavBar,
   .closeNavBar {
@@ -128,6 +127,7 @@
   .header .navBar .navLists .btn a {
     color: var(--whiteColor);
     font-weight: 500;
+    text-decoration: none;
   }
 }
 @media screen and (min-width: 960px) {

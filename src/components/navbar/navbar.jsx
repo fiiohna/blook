@@ -21,7 +21,7 @@ const Navbar = () => {
             <header className="header flex">
                 <div className="logoDiv">
                     <a href="/" className="logo">
-                        <img className="logo" src={logo} alt="Blook Logo" />
+                        <img class="logo" src={logo} alt="Blook Logo" />
                     </a>
                 </div>
 

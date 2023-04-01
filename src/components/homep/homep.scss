@@ -27,11 +27,11 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(233, 207, 194, 0.752);
+    background: rgb(47, 106, 127);
     top: 0;
     bottom: 0;
     z-index: 1;
-    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;
   }
 
   video {
@@ -82,7 +82,7 @@
         color: var(--textColor);
         padding-bottom: 10px;
         font-size: 13px;
-        font-weight: 900;
+        font-weight: 500;
       }
 
       .label_total {
@@ -127,7 +127,7 @@
 
       .searchOptions {
         position: absolute;
-        background: var(--blackColor);
+        background: hsl(199, 100%, 33%);
         width: max-content;
         bottom: -0.7rem;
         column-gap: 0.8rem;
@@ -144,12 +144,10 @@
 
         .icon {
           font-size: 18px;
-          color: var(--whiteColor);
         }
 
         span {
           font-size: 13px;
-          color: var(--whiteColor);
         }
       }
     }
@@ -210,7 +208,7 @@
     .homeContent {
       .cardDiv {
         padding: 2rem 1rem;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   }
@@ -232,7 +230,7 @@
 
       .cardDiv {
         padding: 2rem 1rem;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
 
         .input {
           margin-bottom: 1rem;
