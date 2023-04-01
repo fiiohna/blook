@@ -6,13 +6,29 @@ import "./coupon.css";
 const Coupons = () => {
     const [coupons, setCoupons] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5014/get_coupons/9')
+        fetch('http://localhost:5014/get_coupons/1')
         .then((response) => response.json())
         .then((data) => {
         setCoupons(data.data);
         console.log(data.data.data);
       });
 }, [])
+
+
+    const addCoupon = ((e) => {
+        const points_deduct = e.currentTarget.value;
+        const id = 1
+
+        fetch(`http://localhost:5014/get_coupons/${id}/${points_deduct}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+        })
+        
+        console.log(e.currentTarget.value);
+        window.location.reload(false);
+    });
+
   return (
     <div className="coupons">
         <h1>Redeem your points!  </h1> 
@@ -27,7 +43,7 @@ const Coupons = () => {
                         <div className="couponDetails">
                             <h2 className="couponCode">{coupon.coupon_code}</h2>
                             <p className="couponPoint">You need: {coupon.coupon_point} points</p>
-                            <button className="btn">Redeem</button>
+                            <button value={coupon.coupon_point} onClick={addCoupon} className="btn">Redeem</button>
                         </div>
                     </div>
                 );
