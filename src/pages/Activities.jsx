@@ -17,12 +17,7 @@
 //     );
 // }
 
-import React, { useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import img from "../img/deals/deal1.png";
-import img2 from "../img/deals/deal2.png";
-import img3 from "../img/deals/deal3.png";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
 
 export default function Activities() {
     const [index, setIndex] = useState(0);
