@@ -3,6 +3,7 @@ import { MdRedeem } from "react-icons/md"
 import "./coupon.css";
 
 
+
 const Coupons = () => {
     const [coupons, setCoupons] = useState([]);
     useEffect(() => {
@@ -10,9 +11,9 @@ const Coupons = () => {
         .then((response) => response.json())
         .then((data) => {
         setCoupons(data.data);
-        console.log(data.data.data);
+        // console.log(data.data);
       });
-}, [])
+    }, [])
 
 
     const addCoupon = ((e) => {
@@ -22,10 +23,9 @@ const Coupons = () => {
         fetch(`http://localhost:5014/get_coupons/${id}/${points_deduct}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+                console.log(points_deduct);
         })
         
-        console.log(e.currentTarget.value);
         window.location.reload(false);
     });
 
@@ -36,7 +36,7 @@ const Coupons = () => {
             {
             coupons.map((coupon) => {
                 return (
-                    <div className="singleCoupon" key={coupon.id}>
+                    <div className="singleCoupon">
                         <div className="couponPicture">
                             <MdRedeem className="icon redeem"/>
                         </div>
