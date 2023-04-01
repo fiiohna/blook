@@ -15,19 +15,20 @@
 }
 
 :root {
-    /* --primary: #E58F65;
+  /* --primary: #E58F65;
     --secondary: #FFFFFF; */
-    --PrimaryColor: hsl(199, 100%, 33%);
-    --SecondaryColor: hsl(187, 85%, 43%);
-    --gradientColor: linear-gradient (to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
-    --whiteColor: hsl(0, 0%, 100%);
-    --blackColor: hsl(201, 33%, 16%);
-    --textColor: hsl(240, 4%, 36%);
-    --whiteColorDeam: hsl(0, 0%, 93%);
-    --greyText: rgb(190, 190, 190);
-    --inputColor: rgb(239, 239, 239);
-    --bodyColor: rgb(240, 240, 246);
-    --cardBG: rgb(225, 225, 235);
+  --PrimaryColor: #E58F65;
+  --SecondaryColor: #D05353;
+  --gradientColor: #B8D0EB;
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 235);
+  --cardHover: rgb(255, 255, 255);
 }
 
 html {
@@ -126,6 +127,62 @@ body{
   body{
     zoom: 1.7;
   }
+}
+
+.Tabs {
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  background: var(--whiteColor);
+  margin: 3.5rem auto 1.5rem;
+  padding: 2rem 1rem;
+  color: var(--PrimaryColor);
+  border-radius: 2rem;
+  @media (max-width: 769px) {
+    padding: 2rem 0;
+  }
+}
+
+ul.nav {
+  width: 60%;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--PrimaryColor);
+  border-radius: 2rem;
+  padding-left: 0px;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+}
+ul.nav li {
+  width: 50%;
+  padding: 1rem;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.7s;
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+ul.nav li:nth-child(2) {
+  border-radius: 0;
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+ul.nav li:hover {
+  background: var(--PrimaryColor);
+  color: var(--whiteColor);
+}
+ul.nav li.active {
+  background: var(--PrimaryColor);
+  color: var(--whiteColor)
+}
+
+.reviewsTab p, .pendingTab p {
+  font-size: 2rem;
+  text-align: center;
 }
 
 

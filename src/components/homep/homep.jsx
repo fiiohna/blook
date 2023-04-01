@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import './homep.css'
-import video from '../../assets/video.mp4'
+import video3 from '../../assets/video3.mp4'
 // import {GrLocation} from 'react-icons/gr'
 import {HiFilter} from 'react-icons/hi'
 import {FaTripadvisor} from 'react-icons/fa'
@@ -24,15 +24,15 @@ const Homep = () => {
     return (
         <section className='home'>
             <div className="overlay"></div>
-            <video src={video} muted autoPlay loop type="video/mp4"></video> 
+            <video src={video3} muted autoPlay loop type="video/mp4"></video> 
 
             <div className="homeContent container">
                 <div className="textDiv">
-                    <span data-aos="fade-up" className="smallText">
+                    {/* <span data-aos="fade-up" className="smallText">
                         Our Packages
-                    </span>
+                    </span> */}
                     <h1 data-aos="fade-up" className="homeTitle">
-                        Search for your fun
+                        Find your next adventure
                     </h1>
                 </div>
 
@@ -56,7 +56,7 @@ const Homep = () => {
                         </div>
                     </div>
 
-                    <div className="priceInput">
+                    {/* <div className="priceInput">
                         <div className="label_total flex">
                             <label htmlFor="price">
                                 Max Price:
@@ -66,7 +66,7 @@ const Homep = () => {
                         <div className="input flex">
                             <input type="range" max="5000" min="1000"/>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="searchOptions flex">
                         <HiFilter className="icon"/>

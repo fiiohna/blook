@@ -14,37 +14,36 @@ import {HiOutlineClipboardCheck, HiOutlineLocationMarker} from 'react-icons/hi'
 
 // THIS IS HARD-CODED HERE!!!!
 
+// const Data = [
+//     {
+//         id: 1,
+//         imgSrc: img,
+//         destTitle: 'Bora Bora',
+//         location: 'New Zealand',
+//         grade: 'CULTURAL EXPERIENCE',
+//         fees: '$700',
+//         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 
-const Data = [
-    {
-        id: 1,
-        imgSrc: img,
-        destTitle: 'Bora Bora',
-        location: 'New Zealand',
-        grade: 'CULTURAL EXPERIENCE',
-        fees: '$700',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
-
-    },
-    {
-        id: 2,
-        imgSrc: img2,
-        destTitle: 'Machu Picchu',
-        location: 'Peru',
-        grade: 'CULTURAL EXPERIENCE',
-        fees: '$600',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
-    },
-    {
-        id: 3,
-        imgSrc: img3,
-        destTitle: 'Bali Island',
-        location: 'Indonesia',
-        grade: 'CULTURAL EXPERIENCE',
-        fees: '$500',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
-    }
-]
+//     },
+//     {
+//         id: 2,
+//         imgSrc: img2,
+//         destTitle: 'Machu Picchu',
+//         location: 'Peru',
+//         grade: 'CULTURAL EXPERIENCE',
+//         fees: '$600',
+//         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
+//     },
+//     {
+//         id: 3,
+//         imgSrc: img3,
+//         destTitle: 'Bali Island',
+//         location: 'Indonesia',
+//         grade: 'CULTURAL EXPERIENCE',
+//         fees: '$500',
+//         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
+//     }
+// ]
 
 const Main = () => {
 
@@ -54,7 +53,7 @@ const Main = () => {
         fetch('http://localhost:5001/activity')
         .then((response) => response.json())
         .then((data) => {
-        setActivity(data.data.activities);
+        setActivity(data.data.activities.slice(0,30));
       });
 
         
@@ -94,7 +93,7 @@ const Main = () => {
                                     </div>
 
                                     <button className='btn flex'>
-                                        DETAILS <HiOutlineClipboardCheck className='icon'/>
+                                        Book Now <HiOutlineClipboardCheck className='icon'/>
                                     </button>
                                 </div>
                             </div>

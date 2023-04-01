@@ -1,0 +1,43 @@
+.profile{
+    padding: 100px 15rem 0 15rem;
+    width: 100%;
+    height: auto;
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .pictureBox{
+
+        margin-top: 25px;
+
+        .picture {
+            
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    }
+
+    .profileBox{
+        padding-left: 100px; 
+
+        h1 {
+            padding-top: 80px;
+            padding-bottom: 20px;
+        }
+
+        .details{
+            padding-top: 20px;
+
+            .detail{
+                padding-top: 20px;
+            }
+        }
+    }
+
+
+}

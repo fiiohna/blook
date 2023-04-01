@@ -1,0 +1,33 @@
+.profile {
+  padding: 100px 15rem 0 15rem;
+  width: 100%;
+  height: auto;
+}
+.profile .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.profile .pictureBox {
+  margin-top: 25px;
+}
+.profile .pictureBox .picture {
+  height: 150px;
+  width: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+.profile .profileBox {
+  padding-left: 100px;
+}
+.profile .profileBox h1 {
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+.profile .profileBox .details {
+  padding-top: 20px;
+}
+.profile .profileBox .details .detail {
+  padding-top: 20px;
+}/*# sourceMappingURL=profilep.css.map */
