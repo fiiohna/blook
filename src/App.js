@@ -1,35 +1,36 @@
 import React from "react";
+import "./index.css";
+import "./App.css";
 import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 // pages
-import Home from "./pages/Home"
+import Navbar  from "./components/navbar/navbar";
+import Home from "./pages/Home";
 import Activities from "./pages/Activities"
-
-// layouts
-import RootLayout from "./layouts/RootLayout";
-import LoginLayout from "./layouts/LoginLayout";
-import Signin from "./pages/login/Signin";
-import Signup from "./pages/login/Signup";
+import Profile from "./pages/Profile";
+import Login from "./pages/Login";
+import Signinp from "./components/loginp/signinp";
+import Signupp from "./components/loginp/signupp";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
+    <Route path="/" element={<Navbar />}>
       <Route index element={<Home />} />
       <Route path="activities" element={<Activities />} />
-      <Route path="login" element={<LoginLayout />}>
-        <Route path="signin" element={<Signin />}/>
-        <Route path="signup" element={<Signup />}/>
+      <Route path="profile" element={<Profile />} />
+      <Route path="login" element={<Login />}>
+        <Route path="signin" element={<Signinp />}/>
+        <Route path="signup" element={<Signupp />}/>
       </Route>
-      {/* Profilepage */}
     </Route>
   )
 )
 
-function App() {
+const App = () => {
   return (
-      <RouterProvider router={router} />
-  );
+    <>
+    <RouterProvider router={router}/>
+    </>
+  )
 }
-
 export default App;
