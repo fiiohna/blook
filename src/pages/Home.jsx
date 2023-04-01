@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Homep from '../components/homep/homep';
 import Main from '../components/main/main';
+import Recommendation from "../components/recommendation/recommendation";
 
 /* images */
 import deal1 from "../img/deals/deal1.png";
@@ -19,7 +20,8 @@ export default function Home() {
     return (
         <>
             <Homep></Homep>
-            <Main></Main>
+            <Recommendation></Recommendation>
+            <Main></Main>      
         </>
         // <div class="homeContainer">
         //     <div class="row">
@@ -42,29 +44,29 @@ export default function Home() {
         //         <div class="float-child right">
         //             <div class="rightContent">
         //                 <h2 style={{ fontWeight: 'bold' }}>Offers for you</h2>
-        //                 <Carousel activeIndex={index} onSelect={handleSelect}>
-        //                     <Carousel.Item>
-        //                         <img
-        //                             className="d-block w-100"
-        //                             src={deal1}
-        //                             alt="First slide"
-        //                         />
-        //                     </Carousel.Item>
-        //                     <Carousel.Item>
-        //                         <img
-        //                             className="d-block w-100"
-        //                             src={deal2}
-        //                             alt="Second slide"
-        //                         />
-        //                     </Carousel.Item>
-        //                     <Carousel.Item>
-        //                         <img
-        //                             className="d-block w-100"
-        //                             src={deal3}
-        //                             alt="Third slide"
-        //                         />
-        //                     </Carousel.Item>
-        //                 </Carousel>
+                        // <Carousel activeIndex={index} onSelect={handleSelect}>
+                        //     <Carousel.Item>
+                        //         <img
+                        //             className="d-block w-100"
+                        //             src={deal1}
+                        //             alt="First slide"
+                        //         />
+                        //     </Carousel.Item>
+                        //     <Carousel.Item>
+                        //         <img
+                        //             className="d-block w-100"
+                        //             src={deal2}
+                        //             alt="Second slide"
+                        //         />
+                        //     </Carousel.Item>
+                        //     <Carousel.Item>
+                        //         <img
+                        //             className="d-block w-100"
+                        //             src={deal3}
+                        //             alt="Third slide"
+                        //         />
+                        //     </Carousel.Item>
+                        // </Carousel>
         //                 <p>Catch these offers while they last!</p>
         //             </div>
         //         </div>

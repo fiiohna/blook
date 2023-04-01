@@ -1,0 +1,189 @@
+:root {
+    /* --primary: #E58F65;
+      --secondary: #FFFFFF; */
+    --PrimaryColor: #E58F65;
+    --SecondaryColor: #D05353;
+    --gradientColor: #B8D0EB;
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 9%, 7%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 246);
+    --cardBG: rgb(206, 206, 255);
+    --cardHover: rgb(255, 255, 255);
+}
+
+.recommendation {
+    width: 100%;
+}
+
+.recommendation .secContainer .secHeader .textDiv .secTitle .title{
+    position: relative;
+    width: -moz-max-content;
+    width: max-content;
+    color: var(--textColor);
+    margin: 1rem 0;
+    z-index: 2;
+}
+
+.recommendation .secContainer .secHeader .textDiv .secTitle .title::after{
+    position: absoliute;
+    content: "";
+    background: var(--SecondaryColor);
+    height: 5px;
+    width: 120px;
+    right: 0;
+    bottom: -5px;
+    z-index: -1;
+}
+
+.recommendation .secContainer .secHeader .iconsDiv{
+    gap:0.5rem;
+}
+
+.recommendation .secContainer .secHeader .iconsDiv .icon{
+    border-radius: 50%;
+    font-size: 2.5rem;
+}
+
+
+.recommendation .secContent {
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.recommendation .secContent .singleDestination {
+    height: 100%;
+    display: grid;
+    row-gap: 10px;
+    border-radius: 10px;
+    align-items: center;
+    background: var(--cardBG);
+    box-shadow: 0 2px 4px rgba(144, 140, 141, 0.54);
+    box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+    overflow: hidden;
+}
+
+.recommendation .secContent .singleDestination:hover {
+    background: var(--cardHover);
+    box-shadow: 1 4px 4px rgba(85, 85, 114, 0.549);
+    transition: 0.3s ease;
+}
+
+.recommendation .secContent .singleDestination .imageDiv {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.recommendation .secContent .singleDestination .imageDiv img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    transition: 2s ease;
+}
+
+.recommendation .secContent .singleDestination .imageDiv:hover img {
+    transform: scale(1.1);
+}
+
+.recommendation .secContent .singleDestination .cardInfo {
+    padding: 1rem;
+    background-color: rgba(113, 113, 247, 0.993);
+}
+
+.recommendation .secContent .singleDestination .cardInfo .name {
+    color: var(--blackColor);
+    font-size: 1.25rem;
+}
+
+.recommendation .secContent .singleDestination .cardInfo .continent {
+    gap: 0.5rem;
+}
+
+.recommendation .secContent .singleDestination .cardInfo .continent .icon {
+    color: var(--textColor);
+    font-size: 18px;
+}
+
+.recommendation .secContent .singleDestination .cardInfo .continent .icon .name {
+    color: var(--textColor);
+    font-size: 400;
+    font-size: 14px;
+}
+
+.recommendation .secContent .singleDestination .cardInfo .continent .fees {
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-top: 1.5px solid var(--greyText);
+    border-bottom: 1.5px solid var(--greyText);
+}
+
+.recommendation .secContent .singleDestination .cardInfo .continent .fees .grade {
+    color: var(--textColor);
+    max-width: 100px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recommendation .secContent .singleDestination .cardInfo .continent .fees .price {
+    font-size: 2rem;
+    color: var(--blackColor);
+    align-items: right;
+}
+
+.recommendation .secContent .singleDestination .cardInfo .continent .desc {
+    font-size: 13.5px;
+    color: var(--textColor);
+    font-weight: 500;
+}
+
+.recommendation .secContent .singleDestination .cardInfo .continent .btn {
+    margin-top: 1rem;
+    color: var(--whiteColor);
+    font-weight: 600;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.recommendation .secContent .singleDestination .cardInfo .continent .btn .icon {
+    align-self: center;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 500px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .title::after {
+        width: 155px !important;
+    }
+
+    .secContent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .secContent .singleDestination {
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 840px) {
+    .secContent {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .secContent .singleDestination {
+        height: auto;
+    }
+}
+
+/*# sourceMappingURL=recommendation.css.map */

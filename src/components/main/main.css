@@ -73,8 +73,9 @@
 }
 .main .secContent .singleDestination .cardInfo {
   padding: 1rem;
+  background-color: rgba(113, 113, 247, 0.993);
 }
-.main .secContent .singleDestination .cardInfo .destTitle {
+.main .secContent .singleDestination .cardInfo .name {
   color: var(--blackColor);
   font-size: 1.25rem;
 }
@@ -136,7 +137,7 @@
 
 .main .activitiesSearchItem .activitiesSearchText{
   width: 75%;
-  border: 2px solid var(--gradientColor);
+  border: 2px solid black;
   box-sizing: border-box;
   padding: 16px 32px;
 }
@@ -152,6 +153,7 @@ button {
   border: 1px solid var(--gradientColor);
   cursor: pointer;
   background-color: var(--gradientColor);
+  border: 2px solid black;
 }
 
 button:hover {
