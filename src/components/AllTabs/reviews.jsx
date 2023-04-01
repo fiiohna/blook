@@ -14,6 +14,7 @@ const Reviews = () => {
         console.log(data.data);
       });
 }, [])
+
   return (
     <div className="reviewsTab">
         {
