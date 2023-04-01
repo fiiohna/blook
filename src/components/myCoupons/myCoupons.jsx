@@ -34,7 +34,7 @@ const MyCoupons = () => {
                                 </div>
                                 <div className="couponDetails">
                                     <h2 className="couponCode">{coupon.coupon_point}</h2>
-                                    <h3 className="couponDesc">Get ${coupon.coupon_point} off your next activity!</h3>
+                                    {/* <h3 className="couponDesc">Get ${coupon.coupon_point} off your next activity!</h3> */}
                                 </div>
                             </div>
                         );

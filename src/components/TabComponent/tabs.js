@@ -21,7 +21,7 @@ const Tabs = () => {
           className={activeTab === "tab1" ? "active" : ""}
           onClick={changeToReviews}
         >
-          Reviews
+          Your Reviews
         </li>
         <li
           className={activeTab === "tab2" ? "active" : ""}
