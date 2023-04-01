@@ -53,7 +53,7 @@ const Main = () => {
         fetch('http://localhost:5001/activity')
         .then((response) => response.json())
         .then((data) => {
-        setActivity(data.data.activities.slice(0,5));
+        setActivity(data.data.activities.slice(0,30));
       });
 
         

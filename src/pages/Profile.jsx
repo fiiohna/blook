@@ -1,10 +1,8 @@
 import React from "react";
+import ProfilePage from "../components/profilep/profilep";
 
 export default function Profile() {
     return (
-        <div>
-            Bookings 
-            Payment history
-        </div>
+        <ProfilePage></ProfilePage>
     )
 }
