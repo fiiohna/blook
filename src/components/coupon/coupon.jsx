@@ -6,8 +6,9 @@ import "./coupon.css";
 
 const Coupons = () => {
     const [coupons, setCoupons] = useState([]);
+    const id = localStorage.getItem("user_id");
     useEffect(() => {
-        fetch('http://localhost:5014/get_coupons/1')
+        fetch(`http://localhost:5014/get_coupons/${id}`)
         .then((response) => response.json())
         .then((data) => {
         setCoupons(data.data);
@@ -18,7 +19,7 @@ const Coupons = () => {
 
     const addCoupon = ((e) => {
         const points_deduct = e.currentTarget.value;
-        const id = 1
+        const id = localStorage.getItem("user_id");
 
         fetch(`http://localhost:5014/get_coupons/${id}/${points_deduct}`)
             .then(response => response.json())

@@ -4,7 +4,7 @@ import "./myCoupons.css";
 
 const MyCoupons = () => {
     const [myCoupons, setMyCoupons] = useState([]);
-    const id = 1;
+    const id = localStorage.getItem("user_id");
         useEffect(() => {
             fetch(`http://localhost:5013/coupon/linked/${id}`)
             .then((response) => response.json())

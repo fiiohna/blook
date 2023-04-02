@@ -4,8 +4,8 @@ import "./pending.css";
 
 
 const Pending = () => {
+  const id = localStorage.getItem("user_id");
   const [pending, setPending] = useState([]);
-  const id = 1;
   const [showButton, setShowButton] = useState([]);
   const [error, setError] = useState('');
     useEffect(() => {

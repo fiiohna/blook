@@ -12,7 +12,7 @@ const CreateReviewp = () => {
     const navigate = useNavigate();
 
 
-    const id = 1;
+    const id = localStorage.getItem("user_id");
     useEffect(() => {
         fetch(`http://localhost:5004/pendingReview/${id}`)
         .then((response) => response.json())

@@ -6,8 +6,9 @@ import Rating from "../rating/rating";
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
+    const id = localStorage.getItem("user_id");
     useEffect(() => {
-        fetch('http://localhost:5004/reviews/customer/1')
+        fetch(`http://localhost:5004/reviews/customer/${id}`)
         .then((response) => response.json())
         .then((data) => {
         setReviews(data.data);
