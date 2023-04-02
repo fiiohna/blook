@@ -6,6 +6,10 @@ import { Container, Row, Col, Form, ListGroup } from 'reactstrap';
 import Booking from '../components/booking/booking';
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 import "../components/activityDetail/activityDetail.css"
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { AiOutlineStar } from "react-icons/ai";
+import styled from "styled-components";
+import {NavLink} from "react-router-dom"
 
 export default function ActivityDetail() {
     const { id } = useParams()
@@ -53,11 +57,11 @@ export default function ActivityDetail() {
                                             <span><i class="ri-star-s-fill"></i></span>
                                             <span><i class="ri-star-s-fill"></i></span> */}
                                             <div className="review__input">
-                                                <input type = "text" placeholder = "share your thoughts">
+                                                {/* <input type = "text" placeholder = "share your thoughts">
                                                     
-                                                </input>
+                                                </input> */}
                                                 <button className = "btn primary__btn text-white" type = "submit">
-                                                        Submit
+                                                        <NavLink to = "/createreview" className = "navLink" style= {{color:'black'}}>Submit a Review</NavLink> 
                                                     </button>
 
                                             </div>
