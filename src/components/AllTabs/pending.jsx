@@ -17,10 +17,10 @@ const Pending = () => {
       {
             pending.map((pendingReview) => {
                 return (
-                      <li class="row grid">
+                      <li className="row grid">
                         <div className="icon-style">
                           <div className="reviewList">
-                            <p className="reviewDesc">{pendingReview.activity_id}</p>
+                            <p className="reviewDesc">{pendingReview.activity_name}</p>
                           </div>
                         </div>
                       </li>
