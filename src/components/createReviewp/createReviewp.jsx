@@ -8,8 +8,9 @@ const CreateReviewp = () => {
     const [selectedOption, setSelectedOption] = useState('');
     const [selectedRating, setSelectedRating] = useState('');
 
+    const id = 1;
     useEffect(() => {
-        fetch('http://localhost:5004/pendingReview/1')
+        fetch(`http://localhost:5004/pendingReview/${id}`)
         .then((response) => response.json())
         .then((data) => {
         setOptions(data.data);
@@ -25,7 +26,29 @@ const CreateReviewp = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // handle submit logic
-        console.log(`Review submitted: ${review}, ${selectedOption}, ${selectedRating}`);
+        console.log(`Review submitted: ${id}, ${selectedOption}, ${selectedRating}, ${review}`);
+        fetch('http://localhost:5004/review',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                customer_id: id,
+                activity_id: selectedOption,
+                rating: selectedRating,
+                review_text: review
+            })
+        })
+        .then(
+            fetch(`http://localhost:5004/pendingReview/${id}/${selectedOption}`, 
+            {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+        )
         setReview('');
     };
     
@@ -44,7 +67,7 @@ const CreateReviewp = () => {
         </div>
         <div>
             <select required value={selectedOption} onChange={handleOptionChange}>
-                <option value="">Select an option</option>
+                <option value="">Select an activity</option>
                 {options.map((option) => (
                 <option key={option.num} value={option.activity_id}>
                     {option.activity_name}
