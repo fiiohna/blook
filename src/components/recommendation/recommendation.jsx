@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './recommendation.css'
 import img from '../../assets/img.jpg'
 import img2 from '../../assets/img2.jpg'
@@ -45,9 +45,18 @@ const ActivitiesData = [
     },
 ]
 
+
 export default function Recommendation() {
+
+    const [recommended, setRecommended] = useState([])
     useEffect(() => {
         aos.init({ duration: 2000 })
+        fetch('http://localhost:5100/')
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data.data);
+            setRecommended(data.data);
+        });
     }, [])
 
 
@@ -72,7 +81,7 @@ export default function Recommendation() {
                 <div className="secContent grid">
 
                     {
-                        ActivitiesData.map(({ id, imgSrc, name, address, grade, price, description }) => {
+                        recommended.map(({ id, imgSrc, name, address, grade, price, description }) => {
                             return (
 
                                 <div key={id} className="singleDestination">
@@ -107,7 +116,7 @@ export default function Recommendation() {
 
         </section>
 
-
+ 
         // useEffect(() => {
         //     aos.init({ duration: 2000 })
         // }, [])

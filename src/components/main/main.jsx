@@ -171,24 +171,47 @@ const ActivitiesData = [
 ]
 
 const Main = () => {
-    const [activities, setActivities] = useState(ActivitiesData)
+    // const [activities, setActivities] = useState(ActivitiesData)
+    const [activities, setActivities] = useState([])
     const [searchQuery, setSearchQuery] = useState('')
 
     useEffect(() => {
         aos.init({ duration: 2000 })
+        fetch('http://localhost:5001/activity')
+        .then((response) => response.json())
+        .then((data) => {
+            setActivities(data.data.activities);
+        });
     }, [])
 
     const handleSearch = (event) => {
         setSearchQuery(event.target.value);
       };
     
-      useEffect(() => {
-        const filteredActivities = ActivitiesData.filter((activity) =>
+    //   useEffect(() => {
+    //     const filteredActivities = ActivitiesData.filter((activity) =>
+    //       activity.name.toLowerCase().includes(searchQuery.toLowerCase())
+    //     );
+    //     setActivities(filteredActivities);
+    //   }, [searchQuery]);
+    
+    useEffect(() => {
+        if (searchQuery !== '') {
+        const filteredActivities = activities.filter((activity) =>
           activity.name.toLowerCase().includes(searchQuery.toLowerCase())
         );
         setActivities(filteredActivities);
-      }, [searchQuery]);
-
+        }else {
+            fetch('http://localhost:5001/activity')
+            .then((response) => response.json())
+            .then((data) => {
+                setActivities(data.data.activities);
+        });
+        }
+    
+    
+    }, [searchQuery]);
+    
     return (
         <section className="main container section">
             <div className="activitiesSearchItem">
