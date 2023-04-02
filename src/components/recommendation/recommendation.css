@@ -115,7 +115,7 @@
     font-size: 14px;
 }
 
-.recommendation .secContent .singleDestination .cardInfo .continent .fees {
+.recommendation .secContent .singleDestination .cardInfo .continent .price {
     width: 100%;
     justify-content: space-between;
     padding: 1rem;
@@ -124,7 +124,7 @@
     border-bottom: 1.5px solid var(--greyText);
 }
 
-.recommendation .secContent .singleDestination .cardInfo .continent .fees .grade {
+.recommendation .secContent .singleDestination .cardInfo .continent .price .grade {
     color: var(--textColor);
     max-width: 100px;
     line-height: 20px;
@@ -133,7 +133,7 @@
     justify-content: center;
 }
 
-.recommendation .secContent .singleDestination .cardInfo .continent .fees .price {
+.recommendation .secContent .singleDestination .cardInfo .continent .price .price {
     font-size: 2rem;
     color: var(--blackColor);
     align-items: right;

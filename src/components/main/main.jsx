@@ -23,7 +23,7 @@
 //         name: 'Bora Bora',
 //         address: 'New Zealand',
 //         grade: 'CULTURAL EXPERIENCE',
-//         fees: '$700',
+//         price: '$700',
 //         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 
 //     },
@@ -33,7 +33,7 @@
 //         name: 'Machu Picchu',
 //         address: 'Peru',
 //         grade: 'CULTURAL EXPERIENCE',
-//         fees: '$600',
+//         price: '$600',
 //         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 //     },
 //     {
@@ -42,14 +42,16 @@
 //         name: 'Bali Island',
 //         address: 'Indonesia',
 //         grade: 'CULTURAL EXPERIENCE',
-//         fees: '$500',
+//         price: '$500',
 //         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 //     }
 // ]
 
 // const Main = () => {
 
-//     const [activities, setActivity] = useState([]);
+//         const [activities, setActivities] = useState([]);
+//         const [searchQuery, setSearchQuery] = useState('');
+
 //     useEffect(() => {
 //         aos.init({duration: 2000})
 //         fetch('http://localhost:5001/activity')
@@ -61,6 +63,13 @@
 
 //     }, [])
 
+// const handleSearch = event => {
+//     setSearchQuery(event.target.value);
+// };
+
+// const filteredActivities = activities.filter(activity => {
+//     return activity.name.toLowerCase().includes(searchQuery.toLowerCase());
+// });
 
 //     return (
 //         <section className="main container section">
@@ -84,7 +93,7 @@
 //                                     <span className="continent flex"><HiOutlineLocationMarker className='icon'/></span>
 //                                     <span className="name">{activity.address}</span>
 
-//                                     <div className="fees flex">
+//                                     <div className="price flex">
 //                                         <div className="price">
 //                                             <h3>USD{activity.price}</h3>
 //                                         </div>
@@ -117,6 +126,8 @@ import './main.css'
 import img from '../../assets/img.jpg'
 import img2 from '../../assets/img2.jpg'
 import img3 from '../../assets/img3.jpg'
+import { NavLink, Outlet, useNavigate  } from "react-router-dom";
+import ActivityDetail from '../activityDetail/activityDetail'
 
 import aos from 'aos'
 import 'aos/dist/aos.css'
@@ -129,14 +140,14 @@ import { FaSearch } from 'react-icons/fa';
 
 // THIS IS HARD-CODED HERE!!!!
 
-const Data = [
+const ActivitiesData = [
     {
         id: 1,
         imgSrc: img,
         name: 'Bora Bora',
         address: 'New Zealand',
         grade: 'CULTURAL EXPERIENCE',
-        fees: '$700',
+        price: 700,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 
     },
@@ -146,7 +157,7 @@ const Data = [
         name: 'Machu Picchu',
         address: 'Peru',
         grade: 'CULTURAL EXPERIENCE',
-        fees: '$600',
+        price: 600,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
     },
     {
@@ -155,13 +166,13 @@ const Data = [
         name: 'Bali Island',
         address: 'Indonesia',
         grade: 'CULTURAL EXPERIENCE',
-        fees: '$500',
+        price: 500,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
     },
 ]
 
 const Main = () => {
-    const [activities, setActivities] = useState(Data)
+    const [activities, setActivities] = useState(ActivitiesData)
     const [searchQuery, setSearchQuery] = useState('')
 
     useEffect(() => {
@@ -173,7 +184,7 @@ const Main = () => {
       };
     
       useEffect(() => {
-        const filteredActivities = Data.filter((activity) =>
+        const filteredActivities = ActivitiesData.filter((activity) =>
           activity.name.toLowerCase().includes(searchQuery.toLowerCase())
         );
         setActivities(filteredActivities);
@@ -184,7 +195,7 @@ const Main = () => {
             <div className="activitiesSearchItem">
                 <span style={{marginRight: "20px"}}><FaSearch/></span>
                 <input type="text" placeholder="What do you want to do?" className="activitiesSearchText" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}></input>
-                <button type="submit" className="button-submit" onClick={handleSearch}>Search</button>
+                <button type="submit" className="activitiesSubmit" onClick={handleSearch}>Search</button>
             </div>
 
             <div className="secTitle">
@@ -207,9 +218,9 @@ const Main = () => {
                                     <span className="continent flex"><HiOutlineLocationMarker className='icon' /></span>
                                     <span className="name">{activity.address}</span>
 
-                                    <div className="fees flex">
+                                    <div className="price flex">
                                         <div className="price">
-                                            <h3>SGD{activity.fees}</h3>
+                                            <h3>SGD{activity.price}</h3>
                                         </div>
                                     </div>
 
@@ -218,7 +229,8 @@ const Main = () => {
                                     </div>
 
                                     <button className='btn flex'>
-                                        DETAILS/BOOK <HiOutlineClipboardCheck className='icon' />
+                                    <NavLink to= "/activitydetail" className="navLink" style={{color:'black'}}>DETAILS/BOOK <HiOutlineClipboardCheck className='icon' /></NavLink>
+                                    {/* <NavLink to={`/activitydetail/${activity.id}`} className="navLink" >DETAILS/BOOK <HiOutlineClipboardCheck className='icon' /></NavLink> */}
                                     </button>
                                 </div>
                             </div>
@@ -226,6 +238,7 @@ const Main = () => {
                     })
                 }
             </div>
+            <Outlet />
         </section>
     )
 }

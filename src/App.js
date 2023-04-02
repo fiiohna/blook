@@ -7,6 +7,7 @@ import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } 
 import Navbar  from "./components/navbar/navbar";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import ActivityDetail from "./pages/ActivityDetail";
 import Login from "./pages/Login";
 import Signinp from "./components/loginp/signinp";
 import Signupp from "./components/loginp/signupp";
@@ -16,6 +17,9 @@ const router = createBrowserRouter(
     <Route path="/" element={<Navbar />}>
       <Route index element={<Home />} />
       <Route path="profile" element={<Profile />} />
+      {/* Need to route the activity.id to the below path */}
+      {/* <Route path={`/activitydetail/${activity.id}`} element={<ActivityDetail />} /> */}
+      <Route path="activitydetail" element={<ActivityDetail />} />
       <Route path="login" element={<Login />}>
         <Route path="signin" element={<Signinp />}/>
         <Route path="signup" element={<Signupp />}/>
