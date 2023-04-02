@@ -23,7 +23,7 @@ export default function ActivityDetail() {
         <section style={{ paddingTop: "100px" }}>
             <Container>
                 <Row>
-                    <Col lg= "6">
+                    <Col lg="6">
                         <div className="activityContent">
                             <img src={imgSrc} alt="image" />
 
@@ -42,24 +42,80 @@ export default function ActivityDetail() {
                                     <p>{description}</p>
                                 </div>
 
-                                
+                                {/* Tour Reviews */}
+                                <div className="activity__reviews mt-4">
+                                    <h1>Reviews</h1>
+                                    <Form>
+                                        <div className="d-flex align-items-center gap-3 mb-4 rating__group">
+                                            {/* <span><i class="ri-star-s-fill"></i></span>
+                                            <span><i class="ri-star-s-fill"></i></span>
+                                            <span><i class="ri-star-s-fill"></i></span>
+                                            <span><i class="ri-star-s-fill"></i></span>
+                                            <span><i class="ri-star-s-fill"></i></span> */}
+                                            <div className="review__input">
+                                                <input type = "text" placeholder = "share your thoughts">
+                                                    
+                                                </input>
+                                                <button className = "btn primary__btn text-white" type = "submit">
+                                                        Submit
+                                                    </button>
+
+                                            </div>
+                                        </div>
+                                    </Form>
+                                    <ListGroup className = "user__reviews">
+                                            <div className = "review__item">
+                                                {/* <img src = {ImgSrc} alt = ""/> */}
+                                                <div className = "w-100">
+                                                    <div className = "d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h2>name</h2>
+                                                            <p>customer id</p>
+                                                        </div>
+                                                        <span className = "d-flex align-items-center">
+                                                            <p>Rating: 5 star</p>
+                                                        </span>
+                                                    </div>
+                                                    <h3>Amazing tour</h3>
+                                                </div>
+                                            </div>
+
+                                            <div className = "review__item">
+                                                {/* <img src = {ImgSrc} alt = ""/> */}
+                                                <div className = "w-100">
+                                                    <div className = "d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h2>name</h2>
+                                                            <p>customer id</p>
+                                                        </div>
+                                                        <span className = "d-flex align-items-center">
+                                                            <p>Rating: 5 star</p>
+                                                        </span>
+                                                    </div>
+                                                    <h3>Amazing tour</h3>
+                                                </div>
+                                            </div>
+                                    </ListGroup>
+                                </div>
+
+
                             </div>
                         </div>
-                       
-                    </Col>
-                    
 
-                    <Col lg= "4">
-                    
-                    <Booking activity={activity}></Booking>
-                    
-                        
+                    </Col>
+
+
+                    <Col lg="4">
+
+                        <Booking activity={activity}></Booking>
+
+
                     </Col>
                 </Row>
             </Container>
         </section>
-        
-        
+
+
     );
 };
 
@@ -94,4 +150,4 @@ export default function ActivityDetail() {
         //          </Row>
         //      </Container>
         // </section>
-        
+
