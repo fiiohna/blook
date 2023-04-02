@@ -3,6 +3,7 @@ import './recommendation.css'
 import img from '../../assets/img.jpg'
 import img2 from '../../assets/img2.jpg'
 import img3 from '../../assets/img3.jpg'
+import { NavLink, Outlet, useNavigate  } from "react-router-dom";
 
 import aos from 'aos'
 import 'aos/dist/aos.css'
@@ -13,14 +14,14 @@ import { BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs'
 
 // THIS IS HARD-CODED HERE!!!!
 
-const Data = [
+const ActivitiesData = [
     {
         id: 1,
         imgSrc: img,
         name: 'Bora Bora',
         address: 'New Zealand',
         grade: 'CULTURAL EXPERIENCE',
-        fees: '$700',
+        price: 700,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
 
     },
@@ -30,7 +31,7 @@ const Data = [
         name: 'Machu Picchu',
         address: 'Peru',
         grade: 'CULTURAL EXPERIENCE',
-        fees: '$600',
+        price: 600,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
     },
     {
@@ -39,7 +40,7 @@ const Data = [
         name: 'Bali Island',
         address: 'Indonesia',
         grade: 'CULTURAL EXPERIENCE',
-        fees: '$500',
+        price: 500,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
     },
 ]
@@ -71,7 +72,7 @@ export default function Recommendation() {
                 <div className="secContent grid">
 
                     {
-                        Data.map(({ id, imgSrc, name, address, grade, fees, description }) => {
+                        ActivitiesData.map(({ id, imgSrc, name, address, grade, price, description }) => {
                             return (
 
                                 <div key={id} className="singleDestination">
@@ -83,9 +84,9 @@ export default function Recommendation() {
                                         <span className="continent flex"><HiOutlineLocationMarker className='icon' /></span>
                                         <span className="name">{address}</span>
 
-                                        <div className="fees flex">
+                                        <div className="price flex">
                                             <div className="price">
-                                                <h3>SGD{fees}</h3>
+                                                <h3>SGD{price}</h3>
                                             </div>
                                         </div>
 
@@ -94,7 +95,7 @@ export default function Recommendation() {
                                         </div>
 
                                         <button className='btn flex'>
-                                            DETAILS/BOOK <HiOutlineClipboardCheck className='icon' />
+                                        <NavLink to= "/activitydetail" className="navLink" style={{color:'black'}}>DETAILS/BOOK <HiOutlineClipboardCheck className='icon' /></NavLink>
                                         </button>
                                     </div>
                                 </div>
@@ -130,7 +131,7 @@ export default function Recommendation() {
         //             <BsArrowRightShort className='icon'/>
         //         </div>
         //             {
-        //                 Data.map(({ id, imgSrc, name, address, grade, fees, description }) => {
+        //                 Data.map(({ id, imgSrc, name, address, grade, price, description }) => {
         //                     return (
         //                         <div key={id} data-aos="fade-up" className="singleDestination">
         //                             {/* it will return single id from the map array */}
@@ -142,9 +143,9 @@ export default function Recommendation() {
         //                                 <span className="continent flex"><HiOutlineLocationMarker className='icon' /></span>
         //                                 <span className="name">{address}</span>
 
-        //                                 <div className="fees flex">
+        //                                 <div className="price flex">
         //                                     <div className="price">
-        //                                         <h3>{fees}</h3>
+        //                                         <h3>{price}</h3>
         //                                     </div>
         //                                 </div>
 
