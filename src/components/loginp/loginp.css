@@ -23,15 +23,12 @@
   top: 5rem;
 }
 
-.container {
+.login .loginNav {
   width: 100%;
   padding: 1rem;
   bottom: 0;
   z-index: 1;
   mix-blend-mode: hard-light;
-}
-
-.loginNav {
   text-align: center;
 }
 
