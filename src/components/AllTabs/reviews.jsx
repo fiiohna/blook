@@ -30,6 +30,8 @@ const Reviews = () => {
                           <p>{review.rating}</p>
                           <p>{review.created}</p> */}
                           <Rating rating={review.rating} review_desc={review.review_text} date={review.created} name={review.activity_name}/>
+                          <button onClick="" className="btn reviewBtn">Edit</button>
+                          <button className="btn reviewBtn">Delete</button>
                       </li>
                 )
                 })

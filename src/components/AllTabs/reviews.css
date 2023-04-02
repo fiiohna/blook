@@ -18,4 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.reviewsTab .row .reviewBtn {
+  margin: 10px;
 }/*# sourceMappingURL=reviews.css.map */
