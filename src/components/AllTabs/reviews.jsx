@@ -6,19 +6,23 @@ import Rating from "../rating/rating";
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
+    const [empty, setEmpty] = useState(false);
     const id = localStorage.getItem("user_id");
     useEffect(() => {
         fetch(`http://localhost:5004/reviews/customer/${id}`)
         .then((response) => response.json())
         .then((data) => {
         setReviews(data.data);
-        console.log(data.data);
+        if (data.data.length == 0) {
+            setEmpty(true);
+        }
+        console.log(data.data)
       });
 }, [])
 
   return (
     <div className="reviewsTab">
-        {
+        { empty ? <h1 className="emptyReviews">No reviews yet!</h1> :
             reviews.map((review) => {
                 return (
                       <li className="row grid">

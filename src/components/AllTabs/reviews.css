@@ -12,4 +12,10 @@
   --inputColor: rgb(239, 239, 239);
   --bodyColor: rgb(240, 240, 246);
   --cardBG: rgb(225, 225, 235);
+}
+
+.reviewsTab .emptyReviews {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=reviews.css.map */
