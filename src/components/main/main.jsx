@@ -174,6 +174,7 @@ const Main = () => {
     // const [activities, setActivities] = useState(ActivitiesData)
     const [activities, setActivities] = useState([])
     const [searchQuery, setSearchQuery] = useState('')
+    localStorage.getItem("activityBookId")
 
     useEffect(() => {
         aos.init({ duration: 2000 })
@@ -211,6 +212,11 @@ const Main = () => {
     
     
     }, [searchQuery]);
+
+    const handleBook = (e) => {
+        localStorage.setItem("activityBookId", e.target.value);
+        // console.log(e.target.value);
+    };
     
     return (
         <section className="main container section">
@@ -250,7 +256,7 @@ const Main = () => {
                                     </div>
 
                                     <button className='btn flex'>
-                                    <NavLink to= "/activitydetail" className="navLink" style={{color:'black'}}>DETAILS/BOOK </NavLink><HiOutlineClipboardCheck className='icon' />
+                                    <NavLink to="/activitydetail" className="navLink" style={{color:'black'}}><button onClick={handleBook} value={activity.id} className="btn">DETAILS/BOOK</button></NavLink><HiOutlineClipboardCheck className='icon' />
                                     {/* <NavLink to={`/activitydetail/${activity.id}`} className="navLink" >DETAILS/BOOK <HiOutlineClipboardCheck className='icon' /></NavLink> */}
                                     </button>
                                 </div>

@@ -4,6 +4,30 @@ import { Form, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 
 export default function Booking({ activity }) {
     const { fees } = activity
+
+    function activatecheckout() {
+        return(
+            fetch('http://localhost:5006/create-checkout-session', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(
+                    {
+                        "customer_id": "1",
+                        "activity_id": "1",
+                        "payment_amount": "100",
+                        "total_pax" : "3",
+                        "datetime" : "2022-12-31"
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    window.location.replace(data.url)
+                })
+
+        )
+    }
     
 
     return (
@@ -68,7 +92,7 @@ export default function Booking({ activity }) {
                     </ListGroupItem>
                 </ListGroup>
 
-                <Button className = "btn primary__btn w-100 mt-4">Book Now</Button>
+                <Button onClick={activatecheckout} className = "btn primary__btn w-100 mt-4">Book Now</Button>
             </div>
         </div>
         
