@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import './createReviewp.css'; // import the SCSS file
 
 const CreateReviewp = () => {
@@ -7,6 +8,9 @@ const CreateReviewp = () => {
     const [ratings, setRatings] = useState([1,2,3,4,5]);
     const [selectedOption, setSelectedOption] = useState('');
     const [selectedRating, setSelectedRating] = useState('');
+
+    const navigate = useNavigate();
+
 
     const id = 1;
     useEffect(() => {
@@ -50,6 +54,7 @@ const CreateReviewp = () => {
             })
         )
         setReview('');
+        navigate("/createreviewsuccessful");
     };
     
     const handleOptionChange = (e) => {
