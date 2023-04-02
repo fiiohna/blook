@@ -35,56 +35,6 @@ const Homep = () => {
                         Search for your <span style={{color: "#E58F65"}}>fun</span>
                     </h1>
                 </div>
-
-                {/* <div data-aos="fade-up" className="cardDiv grid">
-                    <div className="destinationInput">
-                        <label htmlFor="city">
-                            Search for your destination:
-                        </label>
-                        <div className="input flex">
-                            <input type="text" placeholder='Enter name here'/> */}
-                            {/* <GrLocation className='icon'/> */}
-                        {/* </div>
-                    </div> */}
-
-                    {/* <div className="dateInput">
-                        <label htmlFor="date">
-                            Select a date:
-                        </label>
-                        <div className="input flex">
-                            <input type="date"/>
-                        </div>
-                    </div>
-
-                    {/* <div className="priceInput">
-                        <div className="label_total flex">
-                            <label htmlFor="price">
-                                Max Price:
-                            </label>
-                            <h3 className="total">$5000</h3>
-                        </div>
-                        <div className="input flex">
-                            <input type="range" max="5000" min="1000"/>
-                        </div>
-                    </div> */}
-
-                    {/* <div className="searchOptions flex">
-                        <HiFilter className="icon"/>
-                        <span>More Filters</span>
-                    </div>
-                </div> */}
-
-                {/* <div data-aos="fade-up" className="homeFooterIcons flex">
-                    <div className="rightIcons">
-                        <FiFacebook className="icon"/>
-                        <AiOutlineInstagram className="icon"/>
-                        <FaTripadvisor className="icon"/>
-                    </div>
-                    <div className="leftIcons">
-                        <BsListTask className="icon"/>
-                        <TbApps className="icon"/>
-                    </div>
-                </div> */}
             </div>
         </section>
     )

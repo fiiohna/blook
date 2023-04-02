@@ -1,5 +1,5 @@
 import React from "react";
-// import "./loginp.css";
+import "./loginp.css";
 import { NavLink, Outlet } from "react-router-dom";
 
 import Container from 'react-bootstrap/Container';
