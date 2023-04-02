@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import activities from "../assets/data/activities"
 import { Container, Row, Col, Form, ListGroup } from 'react-bootstrap';
-import Booking from '../components/booking/booking';
+import Booking from '../components/bookingstatus/booking';
 
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 
@@ -49,5 +49,14 @@ export default function ActivityDetail() {
                 </Row>
             </Container>
         </section>
+        // <div className= "booking">
+        //     <div className = "booking__top d-flex align-items-center justify-content-between">
+        //         <h3>(price) <span>/per person</span></h3>
+        //         <span className = "tour__rating d-flex align-items-center">
+        //             <i class = "ri-star-s-fill"></i>
+        //             average rating (reviews length)
+        //         </span>
+        //     </div>
+        // </div>
     );
 };
