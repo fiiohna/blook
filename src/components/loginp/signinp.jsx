@@ -4,6 +4,7 @@ import { NavLink, Outlet, Routes, Route } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import "./sign.css";
 
 import aos from "aos";
 import "aos/dist/aos.css";
@@ -25,6 +26,7 @@ export default function Signinp() {
                 <form action="" onSubmit={submitThis}>
                     <div>
                         <label htmlFor="email">Email</label>
+                        <div>
                         <input
                             type="text"
                             name="email"
@@ -32,9 +34,11 @@ export default function Signinp() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
+                        </div>
                     </div>
                     <div>
                         <label htmlFor="passw">Password</label>
+                        <div>
                         <input
                             type="text"
                             name="passw"
@@ -42,6 +46,7 @@ export default function Signinp() {
                             value={passw}
                             onChange={(e) => setPassw(e.target.value)}
                         />
+                        </div>
                     </div>
                     <button type="submit">Login</button>
                 </form>
