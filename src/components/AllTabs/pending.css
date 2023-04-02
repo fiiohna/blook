@@ -1,4 +1,10 @@
 .reviewListPending {
   display: flex;
   justify-content: space-between;
+}
+.reviewListPending .reviewDescNull {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }/*# sourceMappingURL=pending.css.map */
