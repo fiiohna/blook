@@ -50,10 +50,14 @@ export default function Booking({ activity }) {
 
                 <Form.Group className="mb-3" id="phone">
                     <Form.Label>Phone Number</Form.Label>
-                    <Form.Control type="text" placeholder="Enter phone number" />
+                    <Form.Control type="number" placeholder="Enter phone number" />
                 </Form.Group>
 
-                
+                <Form.Group className="mb-3" id="quantity">
+                    <Form.Label>Quantity</Form.Label>
+                    <Form.Control type="number" placeholder="Enter quantity" />
+                </Form.Group>
+    
             </Form>
             </div>
             <div className = "booking__bottom">

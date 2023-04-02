@@ -127,7 +127,6 @@ import img from '../../assets/img.jpg'
 import img2 from '../../assets/img2.jpg'
 import img3 from '../../assets/img3.jpg'
 import { NavLink, Outlet, useNavigate  } from "react-router-dom";
-import ActivityDetail from '../activityDetail/activityDetail'
 
 import aos from 'aos'
 import 'aos/dist/aos.css'

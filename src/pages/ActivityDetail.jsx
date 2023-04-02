@@ -23,75 +23,30 @@ export default function ActivityDetail() {
         <section style={{ paddingTop: "100px" }}>
             <Container>
                 <Row>
-                    <Col lg= "6">
+                    <Col lg="6">
                         <div className="activityContent">
                             <img src={imgSrc} alt="image" />
-
                             <div className="activityInfo">
                                 <h4 className="name">{name}</h4>
-                                <span className="continent flex"><HiOutlineLocationMarker className='icon' /></span>
-                                <span className="name">{address}</span>
+                                <span className="continent flex"><HiOutlineLocationMarker className='icon' /><span className="name">{address}</span></span>
 
                                 <div className="price flex">
                                     <div className="price">
-                                        <h3>SGD{price}</h3>
+                                        <h3>SGD {price}</h3>
                                     </div>
                                 </div>
-
                                 <div className="desc">
                                     <p>{description}</p>
                                 </div>
-
-                                
                             </div>
                         </div>
-                       
                     </Col>
-                    
 
-                    <Col lg= "4">
-                    
-                    <Booking activity={activity}></Booking>
-                    
-                        
+                    <Col lg="4">
+                        <Booking activity={activity}></Booking>
                     </Col>
                 </Row>
             </Container>
         </section>
-        
-        
     );
-};
-
-// <section style={{ paddingTop: "100px" }}>
-        //     <Container>
-        //          <Row>
-        //              <Col lg={8}>
-        //                  <div className="activitityContent">
-        //                      <img src={imgSrc} alt="image" />
-
-        //                     <div className="activityInfo">
-        //                         <h4 className="name">{name}</h4>
-        //                         <span className="continent flex"><HiOutlineLocationMarker className='icon' /></span>
-        //                         <span className="name">{address}</span>
-
-        //                         <div className="price flex">
-        //                                  <h3>SGD{price}</h3>
-        //                             </div>
-        //                         </div>
-
-        //                        <div className="desc">
-        //                             <p>{description}</p>
-        //                         </div>
-
-        //                      </div>
-        //                 </div>
-        //              </Col>
-
-        //             <Col lg={4}>
-        //                  <Booking activity={activity}></Booking>
-        //              </Col>
-        //          </Row>
-        //      </Container>
-        // </section>
-        
+};        
