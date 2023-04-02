@@ -15,6 +15,8 @@ import Login from "./pages/Login";
 import Signinp from "./components/loginp/signinp";
 import Signupp from "./components/loginp/signupp";
 import EditReview from "./pages/EditReview";
+import BookingConfirmation from "./components/bookingstatus/bookingconfirm";
+import BookingFailed from "./components/bookingstatus/bookingfail";
 // import PaymentSuccess from "./components/payment/paymentsuccess";
 
 const router = createBrowserRouter(
@@ -28,6 +30,8 @@ const router = createBrowserRouter(
       <Route path="createreview" element={<CreateReview />} />
       <Route path="createreviewsuccessful" element={<CreateReviewSuccessful/>} />
       <Route path="editreview" element={<EditReview/>} />
+      <Route path="bookingsuccessful" element={<BookingConfirmation/>} />
+      <Route path="bookingfailed" element={<BookingFailed/>} />
       <Route path="login" element={<Login />}>
         <Route path="signin" element={<Signinp />}/>
         <Route path="signup" element={<Signupp />}/>
