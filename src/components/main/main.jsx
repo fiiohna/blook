@@ -215,12 +215,11 @@ const Main = () => {
                                 </div>
                                 <div className="cardInfo">
                                     <h4 className="name">{activity.name}</h4>
-                                    <span className="continent flex"><HiOutlineLocationMarker className='icon' /></span>
-                                    <span className="name">{activity.address}</span>
-
+                                    <span className="continent flex"><HiOutlineLocationMarker className='icon' /><span className="name">{activity.address}</span></span>
+                                    
                                     <div className="price flex">
                                         <div className="price">
-                                            <h3>SGD{activity.price}</h3>
+                                            <h3>SGD {activity.price}</h3>
                                         </div>
                                     </div>
 
@@ -229,7 +228,7 @@ const Main = () => {
                                     </div>
 
                                     <button className='btn flex'>
-                                    <NavLink to= "/activitydetail" className="navLink" style={{color:'black'}}>DETAILS/BOOK <HiOutlineClipboardCheck className='icon' /></NavLink>
+                                    <NavLink to= "/activitydetail" className="navLink" style={{color:'black'}}>DETAILS/BOOK </NavLink><HiOutlineClipboardCheck className='icon' />
                                     {/* <NavLink to={`/activitydetail/${activity.id}`} className="navLink" >DETAILS/BOOK <HiOutlineClipboardCheck className='icon' /></NavLink> */}
                                     </button>
                                 </div>

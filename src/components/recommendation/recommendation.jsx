@@ -81,12 +81,12 @@ export default function Recommendation() {
                                     </div>
                                     <div className="cardInfo">
                                         <h4 className="name">{name}</h4>
-                                        <span className="continent flex"><HiOutlineLocationMarker className='icon' /></span>
-                                        <span className="name">{address}</span>
+                                        <span className="continent flex"><HiOutlineLocationMarker className='icon' /><span className="name">{address}</span></span>
+                                        
 
                                         <div className="price flex">
                                             <div className="price">
-                                                <h3>SGD{price}</h3>
+                                                <h3>SGD {price}</h3>
                                             </div>
                                         </div>
 
@@ -95,7 +95,7 @@ export default function Recommendation() {
                                         </div>
 
                                         <button className='btn flex'>
-                                        <NavLink to= "/activitydetail" className="navLink" style={{color:'black'}}>DETAILS/BOOK <HiOutlineClipboardCheck className='icon' /></NavLink>
+                                        <NavLink to= "/activitydetail" className="navLink" style={{color:'black'}}>DETAILS/BOOK</NavLink><HiOutlineClipboardCheck className='icon' />
                                         </button>
                                     </div>
                                 </div>
