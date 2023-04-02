@@ -9,6 +9,8 @@ import Navbar  from "./components/navbar/navbar";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import ActivityDetail from "./pages/ActivityDetail";
+import CreateReview from "./pages/CreateReview";
+import CreateReviewSuccessful from "./pages/CreateReviewSuccessful";
 import Login from "./pages/Login";
 import Signinp from "./components/loginp/signinp";
 import Signupp from "./components/loginp/signupp";
@@ -22,6 +24,8 @@ const router = createBrowserRouter(
       {/* Need to route the activity.id to the below path */}
       {/* <Route path={`/activitydetail/${activity.id}`} element={<ActivityDetail />} /> */}
       <Route path="activitydetail" element={<ActivityDetail />} />
+      <Route path="createreview" element={<CreateReview />} />
+      <Route path="createreviewsuccessful" element={<CreateReviewSuccessful/>} />
       <Route path="login" element={<Login />}>
         <Route path="signin" element={<Signinp />}/>
         <Route path="signup" element={<Signupp />}/>
@@ -33,7 +37,7 @@ const router = createBrowserRouter(
 const App = () => {
   return (
     <>
-    <RouterProvider router={router}/>
+    <RouterProvider forceRefresh={true} router={router}/>
     </>
   )
 }

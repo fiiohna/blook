@@ -127,7 +127,6 @@ import img from '../../assets/img.jpg'
 import img2 from '../../assets/img2.jpg'
 import img3 from '../../assets/img3.jpg'
 import { NavLink, Outlet, useNavigate  } from "react-router-dom";
-import ActivityDetail from '../activityDetail/activityDetail'
 
 import aos from 'aos'
 import 'aos/dist/aos.css'
@@ -215,12 +214,11 @@ const Main = () => {
                                 </div>
                                 <div className="cardInfo">
                                     <h4 className="name">{activity.name}</h4>
-                                    <span className="continent flex"><HiOutlineLocationMarker className='icon' /></span>
-                                    <span className="name">{activity.address}</span>
-
+                                    <span className="continent flex"><HiOutlineLocationMarker className='icon' /><span className="name">{activity.address}</span></span>
+                                    
                                     <div className="price flex">
                                         <div className="price">
-                                            <h3>SGD{activity.price}</h3>
+                                            <h3>SGD {activity.price}</h3>
                                         </div>
                                     </div>
 
@@ -229,7 +227,7 @@ const Main = () => {
                                     </div>
 
                                     <button className='btn flex'>
-                                    <NavLink to= "/activitydetail" className="navLink" style={{color:'black'}}>DETAILS/BOOK <HiOutlineClipboardCheck className='icon' /></NavLink>
+                                    <NavLink to= "/activitydetail" className="navLink" style={{color:'black'}}>DETAILS/BOOK </NavLink><HiOutlineClipboardCheck className='icon' />
                                     {/* <NavLink to={`/activitydetail/${activity.id}`} className="navLink" >DETAILS/BOOK <HiOutlineClipboardCheck className='icon' /></NavLink> */}
                                     </button>
                                 </div>

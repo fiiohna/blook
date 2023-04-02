@@ -1,0 +1,12 @@
+.createReviewDone {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+  height: 100vh;
+}
+.createReviewDone h1 {
+  padding-bottom: 50px;
+}/*# sourceMappingURL=createReviewSuccessfulp.css.map */
