@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import activities from "../assets/data/activities"
 import { Container, Row, Col, Form, ListGroup } from 'react-bootstrap';
-import Booking from '../components/bookingstatus/booking';
+import Booking from '../components/booking/booking';
 
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 
