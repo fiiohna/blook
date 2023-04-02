@@ -9,16 +9,18 @@ import MyCoupons from '../myCoupons/myCoupons';
 
 
 const ProfilePage = () =>{
-    var id = 1;
+    const id = localStorage.getItem("user_id");
     const [details, setDetails] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5003/customer/' + id)
+        fetch(`http://localhost:5003/customer/${id}`)
         .then((response) => response.json())
         .then((details) => {
             setDetails(details.data);
             // console.log(details.data.customers[id]);
             // console.log(details.data);
-      });
+        });
+
+
 
         
     }, [id])

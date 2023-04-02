@@ -11,6 +11,7 @@ import aos from "aos";
 import "aos/dist/aos.css";
 
 export default function LoginPage() {
+
 	return (
 		<section className="login">
 			<Container>
