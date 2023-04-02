@@ -38,15 +38,3 @@ export default function ActivityDetail() {
                                 <div className="desc">
                                     <p>{description}</p>
                                 </div>
-                            </div>
-                        </div>
-                    </Col>
-
-                    <Col lg="4">
-                        <Booking activity={activity}></Booking>
-                    </Col>
-                </Row>
-            </Container>
-        </section>
-    );
-};        

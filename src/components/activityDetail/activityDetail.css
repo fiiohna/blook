@@ -22,4 +22,65 @@
     color: var(--text-color)
 }
 
+.rating__group span{
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
 
+.activity__reviews h1{
+    margin-top: 3rem;
+}
+
+.review__input{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    width: 100%;
+    padding:0.7rem;
+    border-radius: 2rem;
+    border: 1px solid var(--secondary-color);
+
+}
+
+.review__input input{
+    width: 100%;
+    padding: 0.5rem 0;
+    border:none;
+}
+
+.review__input input:focus{
+    outline: none;
+}
+
+.review__item{
+    display:flex;
+    align-items:center;
+    column-gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.user__reviews{
+    margin-top: 2.5rem;
+}
+
+.review_item h2{
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.review__item p {
+    font-size: 0.9rem;
+    color: var(--text-color)
+}
+
+.review__item h6{
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.review__item span{
+    font-weight: 500
+}
