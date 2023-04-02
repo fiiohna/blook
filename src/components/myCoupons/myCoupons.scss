@@ -56,13 +56,16 @@
             .couponDetails{
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-start;
+                justify-content: center;
                 height: 50%;
                 
                 .couponCode{
+                    display: flex;
                     color: var(--PrimaryColor);
                     font-size: 1.5rem;
                     padding-bottom: 10px;
+                    align-items: center;
+                    justify-content: center;
                 }
     
                 .btn {
