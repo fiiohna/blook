@@ -59,6 +59,11 @@ export default function Recommendation() {
         });
     }, [])
 
+    const handleBook = (e) => {
+        localStorage.setItem("activityBookId", e.target.value);
+        // console.log(e.target.value);
+    };
+
 
     return (
         <section className='recommendation section container'>
@@ -104,7 +109,7 @@ export default function Recommendation() {
                                         </div>
 
                                         <button className='btn flex'>
-                                        <NavLink to= "/activitydetail" className="navLink" style={{color:'black'}}>DETAILS/BOOK</NavLink><HiOutlineClipboardCheck className='icon' />
+                                        <NavLink to="/activitydetail" className="navLink" style={{color:'black'}}><button onClick={handleBook} value={recommended.id} className="btn">DETAILS/BOOK</button></NavLink><HiOutlineClipboardCheck className='icon' />
                                         </button>
                                     </div>
                                 </div>
