@@ -3,7 +3,7 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { AiOutlineStar } from "react-icons/ai";
 import styled from "styled-components";
 
-const Rating = ({rating, review_desc, date, name}) => {
+const Rating = ({rating, review_desc, date}) => {
     
     const stars = Array.from({ length : 5}, (elem, idx) => {
         let num = idx + 0.5;
@@ -22,7 +22,6 @@ const Rating = ({rating, review_desc, date, name}) => {
         <div className="icon-style">
             {stars}
             <div className="reviewList">
-                <p className="reviewName">{name}</p>
                 <p className="reviewDesc">{review_desc}</p>
                 <small className="reviewDates">{date}</small>
             </div>

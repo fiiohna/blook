@@ -1,11 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import activities from "../assets/data/activities"
-import { Container, Row, Col, Form, ListGroup } from 'reactstrap';
-// import Col from 'react-bootstrap/Col';
+import { Container, Row, Col, Form, ListGroup } from 'react-bootstrap';
 import Booking from '../components/booking/booking';
+
 import { HiOutlineLocationMarker } from 'react-icons/hi'
-import "../components/activityDetail/activityDetail.css"
 
 export default function ActivityDetail() {
     const { id } = useParams()
@@ -23,30 +22,67 @@ export default function ActivityDetail() {
         <section style={{ paddingTop: "100px" }}>
             <Container>
                 <Row>
-                    <Col lg="6">
-                        <div className="activityContent">
+                    <Col lg= '8'>
+                        <div className="activitityContent">
                             <img src={imgSrc} alt="image" />
+
                             <div className="activityInfo">
                                 <h4 className="name">{name}</h4>
-                                <span className="continent flex"><HiOutlineLocationMarker className='icon' /><span className="name">{address}</span></span>
+                                <span className="continent flex"><HiOutlineLocationMarker className='icon' /></span>
+                                <span className="name">{address}</span>
 
                                 <div className="price flex">
                                     <div className="price">
-                                        <h3>SGD {price}</h3>
+                                        <h3>SGD{price}</h3>
                                     </div>
                                 </div>
+
                                 <div className="desc">
                                     <p>{description}</p>
                                 </div>
+
                             </div>
                         </div>
                     </Col>
 
-                    <Col lg="4">
+                    <Col lg= '6'>
                         <Booking activity={activity}></Booking>
                     </Col>
                 </Row>
             </Container>
         </section>
+        
+        // <section style={{ paddingTop: "100px" }}>
+        //     <Container>
+        //          <Row>
+        //              <Col lg={8}>
+        //                  <div className="activitityContent">
+        //                      <img src={imgSrc} alt="image" />
+
+        //                     <div className="activityInfo">
+        //                         <h4 className="name">{name}</h4>
+        //                         <span className="continent flex"><HiOutlineLocationMarker className='icon' /></span>
+        //                         <span className="name">{address}</span>
+
+        //                         <div className="price flex">
+        //                                  <h3>SGD{price}</h3>
+        //                             </div>
+        //                         </div>
+
+        //                        <div className="desc">
+        //                             <p>{description}</p>
+        //                         </div>
+
+        //                      </div>
+        //                 </div>
+        //              </Col>
+
+        //             <Col lg={4}>
+        //                  <Booking activity={activity}></Booking>
+        //              </Col>
+        //          </Row>
+        //      </Container>
+        // </section>
+        
     );
-};        
+};

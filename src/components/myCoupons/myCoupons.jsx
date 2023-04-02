@@ -33,8 +33,8 @@ const MyCoupons = () => {
                                     <MdRedeem className="icon redeem"/>
                                 </div>
                                 <div className="couponDetails">
-                                    <span className="couponCode">{coupon.coupon_point}</span>
-                                    <h3 className="couponDesc">Get ${coupon.coupon_point} off your next activity!</h3>
+                                    <h2 className="couponCode">{coupon.coupon_point}</h2>
+                                    {/* <h3 className="couponDesc">Get ${coupon.coupon_point} off your next activity!</h3> */}
                                 </div>
                             </div>
                         );

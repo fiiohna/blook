@@ -59,16 +59,13 @@
 .myCoupons .row .mySingleCoupon .couponDetails {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   height: 50%;
 }
 .myCoupons .row .mySingleCoupon .couponDetails .couponCode {
-  display: flex;
   color: var(--PrimaryColor);
   font-size: 1.5rem;
   padding-bottom: 10px;
-  align-items: center;
-  justify-content: center;
 }
 .myCoupons .row .mySingleCoupon .couponDetails .btn {
   margin-top: 1rem;

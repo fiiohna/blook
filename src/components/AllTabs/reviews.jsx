@@ -20,11 +20,11 @@ const Reviews = () => {
         {
             reviews.map((review) => {
                 return (
-                      <li className="row grid">
+                      <li class="row grid">
                           {/* <p>{review.review_text}</p>
                           <p>{review.rating}</p>
                           <p>{review.created}</p> */}
-                          <Rating rating={review.rating} review_desc={review.review_text} date={review.created} name={review.activity_name}/>
+                          <Rating rating={review.rating} review_desc={review.review_text} date={review.created}/>
                       </li>
                 )
                 })

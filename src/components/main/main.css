@@ -73,8 +73,9 @@
 }
 .main .secContent .singleDestination .cardInfo {
   padding: 1rem;
+  background-color: var(--cardBG);
 }
-.main .secContent .singleDestination .cardInfo .destTitle {
+.main .secContent .singleDestination .cardInfo .name {
   color: var(--blackColor);
   font-size: 1.25rem;
 }
@@ -90,7 +91,7 @@
   font-size: 400;
   font-size: 14px;
 }
-.main .secContent .singleDestination .cardInfo .continent .fees {
+.main .secContent .singleDestination .cardInfo .continent .price {
   width: 100%;
   justify-content: space-between;
   padding: 1rem;
@@ -98,7 +99,7 @@
   border-top: 1.5px solid var(--greyText);
   border-bottom: 1.5px solid var(--greyText);
 }
-.main .secContent .singleDestination .cardInfo .continent .fees .grade {
+.main .secContent .singleDestination .cardInfo .continent .price .grade {
   color: var(--textColor);
   max-width: 100px;
   line-height: 20px;
@@ -106,7 +107,7 @@
   align-items: center;
   justify-content: center;
 }
-.main .secContent .singleDestination .cardInfo .continent .fees .price {
+.main .secContent .singleDestination .cardInfo .continent .price .price {
   font-size: 2rem;
   color: var(--blackColor);
   align-items: right;
@@ -123,10 +124,12 @@
   justify-content: space-between;
   gap: 0.5rem;
 }
+
 .main .secContent .singleDestination .cardInfo .continent .btn .icon {
   align-self: center;
   font-size: 18px;
 }
+
 
 .main  .activitiesSearchItem {
   text-align: center;
