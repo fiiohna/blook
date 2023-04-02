@@ -1,10 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import activities from "../assets/data/activities"
-import { Container, Row, Col, Form, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, Form, ListGroup } from 'reactstrap';
+// import Col from 'react-bootstrap/Col';
 import Booking from '../components/booking/booking';
-
 import { HiOutlineLocationMarker } from 'react-icons/hi'
+import "../components/activityDetail/activityDetail.css"
 
 export default function ActivityDetail() {
     const { id } = useParams()
@@ -22,8 +23,8 @@ export default function ActivityDetail() {
         <section style={{ paddingTop: "100px" }}>
             <Container>
                 <Row>
-                    <Col lg= '8'>
-                        <div className="activitityContent">
+                    <Col lg= "6">
+                        <div className="activityContent">
                             <img src={imgSrc} alt="image" />
 
                             <div className="activityInfo">
@@ -41,18 +42,28 @@ export default function ActivityDetail() {
                                     <p>{description}</p>
                                 </div>
 
+                                
                             </div>
                         </div>
+                       
                     </Col>
+                    
 
-                    <Col lg= '6'>
-                        <Booking activity={activity}></Booking>
+                    <Col lg= "4">
+                    
+                    <Booking activity={activity}></Booking>
+                    
+                        
                     </Col>
                 </Row>
             </Container>
         </section>
         
-        // <section style={{ paddingTop: "100px" }}>
+        
+    );
+};
+
+// <section style={{ paddingTop: "100px" }}>
         //     <Container>
         //          <Row>
         //              <Col lg={8}>
@@ -84,5 +95,3 @@ export default function ActivityDetail() {
         //      </Container>
         // </section>
         
-    );
-};
