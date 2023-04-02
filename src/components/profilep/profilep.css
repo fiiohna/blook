@@ -8,6 +8,11 @@
   flex-direction: row;
   align-items: center;
 }
+.profile .row .reviewsTab .headers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .profile .pictureBox {
   margin-top: 25px;
 }

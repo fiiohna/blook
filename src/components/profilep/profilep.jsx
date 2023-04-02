@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import img from '../../assets/img4.jpg'
 import './profilep.css'
 import Tabs from "../TabComponent/tabs";
+import Coupons from "../coupon/coupon";
+import MyCoupons from '../myCoupons/myCoupons';
 
 
 
@@ -15,11 +17,12 @@ const ProfilePage = () =>{
         .then((details) => {
             setDetails(details.data);
             // console.log(details.data.customers[id]);
-            console.log(details.data);
+            // console.log(details.data);
       });
 
         
     }, [id])
+    
 
     return (
 
@@ -55,6 +58,14 @@ const ProfilePage = () =>{
 
             <div className="row">
                 <Tabs />
+            </div>
+
+            <div className="row">
+                <Coupons/>
+            </div>
+
+            <div className="row">
+                <MyCoupons/>
             </div>
         </div>
 

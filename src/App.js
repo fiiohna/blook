@@ -7,7 +7,6 @@ import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } 
 // pages
 import Navbar  from "./components/navbar/navbar";
 import Home from "./pages/Home";
-import Activities from "./pages/Activities"
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signinp from "./components/loginp/signinp";
@@ -18,8 +17,6 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Navbar />}>
       <Route index element={<Home />} />
-      <Route path="activities" element={<Activities />} />
-      {/* <Route path = "paymentsuccess" element = {<PaymentSuccess/>}/> */}
       <Route path="profile" element={<Profile />} />
       <Route path="login" element={<Login />}>
         <Route path="signin" element={<Signinp />}/>

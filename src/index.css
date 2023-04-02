@@ -130,6 +130,7 @@ body{
 }
 
 .Tabs {
+  display: table-column;
   width: 100%;
   height: auto;
   min-height: 400px;
@@ -182,8 +183,26 @@ ul.nav li.active {
 
 .reviewsTab p, .pendingTab p {
   font-size: 2rem;
-  text-align: center;
+  text-align: start;
 }
+
+.reviewList {
+  align-items: start;
+  margin: 5px;
+  padding: 20px;
+}
+
+.icon-style {
+  border-bottom: 2px solid grey;
+  padding: 10px;
+  width: 100%;
+}
+
+.reviewDates {
+  color: black;
+}
+
+
 
 
 
