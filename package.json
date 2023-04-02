@@ -20,7 +20,6 @@
     "react-dom": "^18.2.0",
     "react-icon": "^1.0.0",
     "react-icons": "^4.8.0",
-    "react-router-dom": "6.9",
     "react-scripts": "5.0.1",
     "react-type-animation": "^3.0.1",
     "styled-components": "^5.3.9",
@@ -49,5 +48,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-router-dom": "^6.10.0",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.60.0",
+    "sass-loader": "^13.2.2"
   }
 }

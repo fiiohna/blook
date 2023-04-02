@@ -5,6 +5,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { TbGridDots } from 'react-icons/tb';
 import { NavLink, Outlet } from "react-router-dom"
 
+
 const Navbar = () => {
     const [active, setActive] = useState('navBar')
 
@@ -29,9 +30,6 @@ const Navbar = () => {
                     <ul className="navLists flex">
                         <li className="navItem">
                             <NavLink to="/" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Home</NavLink>
-                        </li>
-                        <li className="navItem">
-                            <NavLink to="/activities" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Activities</NavLink>
                         </li>
                         <li className="navItem">
                             <NavLink to="/profile" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Profile</NavLink>
