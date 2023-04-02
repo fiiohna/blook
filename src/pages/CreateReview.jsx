@@ -1,8 +1,8 @@
 import React from "react";
-import CreateReview from "../components/createReview/createReview";
+import createReviewp from "../components/createReviewp/createReviewp";
 
 export default function CreateReview() {
     return (
-        <CreateReview></CreateReview>
+        <createReviewp></createReviewp>
     )
 }
