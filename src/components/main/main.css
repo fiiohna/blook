@@ -91,7 +91,7 @@
   font-size: 400;
   font-size: 14px;
 }
-.main .secContent .singleDestination .cardInfo .continent .fees {
+.main .secContent .singleDestination .cardInfo .continent .price {
   width: 100%;
   justify-content: space-between;
   padding: 1rem;
@@ -99,7 +99,7 @@
   border-top: 1.5px solid var(--greyText);
   border-bottom: 1.5px solid var(--greyText);
 }
-.main .secContent .singleDestination .cardInfo .continent .fees .grade {
+.main .secContent .singleDestination .cardInfo .continent .price .grade {
   color: var(--textColor);
   max-width: 100px;
   line-height: 20px;
@@ -107,7 +107,7 @@
   align-items: center;
   justify-content: center;
 }
-.main .secContent .singleDestination .cardInfo .continent .fees .price {
+.main .secContent .singleDestination .cardInfo .continent .price .price {
   font-size: 2rem;
   color: var(--blackColor);
   align-items: right;
@@ -124,6 +124,7 @@
   justify-content: space-between;
   gap: 0.5rem;
 }
+
 .main .secContent .singleDestination .cardInfo .continent .btn .icon {
   align-self: center;
   font-size: 18px;
@@ -142,23 +143,23 @@
   padding: 16px 32px;
 }
 
-input[type=text]:focus {
+input.activitiesSearchText[type=text]:focus {
   background-color: var(--gradientColor);
-  box-shadow: 10px 10px var(--PrimaryColor);
   color: black;
 }
 
-button {
+button.activitiesSubmit {
   padding: 16px 32px;
   font-size: 17px;
   border: 1px solid var(--gradientColor);
   cursor: pointer;
-  background-color: var(--gradientColor);
-  border: 2px solid var(--gradientColor);
+  background-color: var(--PrimaryColor);
+  border: 2px solid var(--PrimaryColor);
 }
 
-button:hover {
-  background-color: var(--PrimaryColor);
+button.activitiesSubmit:hover {
+  background-color: var(--SecondaryColor);
+  border: 2px solid var(--SecondaryColor)
 }
 
 @media screen and (max-width: 500px) {
