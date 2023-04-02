@@ -33,9 +33,6 @@ const Navbar = () => {
                         <li className="navItem">
                             <NavLink to="/profile" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Profile</NavLink>
                         </li>
-                        <li className="navItem">
-                            <NavLink to="/createreview" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Create A Review</NavLink>
-                        </li>
                         <li className='navItem'>
                             <NavLink to="/login/signin" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Login/Sign up</NavLink>
                         </li>
