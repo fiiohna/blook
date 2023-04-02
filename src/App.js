@@ -14,6 +14,7 @@ import CreateReviewSuccessful from "./pages/CreateReviewSuccessful";
 import Login from "./pages/Login";
 import Signinp from "./components/loginp/signinp";
 import Signupp from "./components/loginp/signupp";
+import EditReview from "./pages/EditReview";
 // import PaymentSuccess from "./components/payment/paymentsuccess";
 
 const router = createBrowserRouter(
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
       <Route path="activitydetail" element={<ActivityDetail />} />
       <Route path="createreview" element={<CreateReview />} />
       <Route path="createreviewsuccessful" element={<CreateReviewSuccessful/>} />
+      <Route path="editreview" element={<EditReview/>} />
       <Route path="login" element={<Login />}>
         <Route path="signin" element={<Signinp />}/>
         <Route path="signup" element={<Signupp />}/>

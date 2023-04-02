@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./reviews.css";
 
 import Rating from "../rating/rating";
@@ -8,6 +10,8 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     const [empty, setEmpty] = useState(false);
     const id = localStorage.getItem("user_id");
+    const reviewEdit = localStorage.getItem("reviewEdit");
+    const navigate = useNavigate();
     useEffect(() => {
         fetch(`http://localhost:5004/reviews/customer/${id}`)
         .then((response) => response.json())
@@ -20,6 +24,12 @@ const Reviews = () => {
       });
 }, [])
 
+    const handleEdit = (e) => {
+        localStorage.setItem("reviewEdit", e.target.value);
+        navigate("/editreview");
+        // console.log(e.target.value);
+    }
+
   return (
     <div className="reviewsTab">
         { empty ? <h1 className="emptyReviews">No reviews yet!</h1> :
@@ -30,7 +40,7 @@ const Reviews = () => {
                           <p>{review.rating}</p>
                           <p>{review.created}</p> */}
                           <Rating rating={review.rating} review_desc={review.review_text} date={review.created} name={review.activity_name}/>
-                          <button onClick="" className="btn reviewBtn">Edit</button>
+                          <button value={JSON.stringify(review)} onClick={handleEdit} className="btn reviewBtn">Edit</button>
                           <button className="btn reviewBtn">Delete</button>
                       </li>
                 )
