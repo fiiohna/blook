@@ -42,6 +42,11 @@ const Navbar = () => {
                             }
                         </li>
                         <li className="navItem">
+                            {id == 5 ?
+                                (<NavLink to="/vendorverify" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Verify Booking</NavLink>) : null
+                            }
+                        </li>
+                        <li className="navItem">
                             {id ?
                                 (<NavLink to="/profile" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Profile</NavLink>) : null
                             }   
