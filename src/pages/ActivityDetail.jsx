@@ -33,7 +33,7 @@ export default function ActivityDetail() {
             // console.log(data.data);
         })
 
-        fetch(`http://localhost:5004/review/${activityBookId}`)
+        fetch(`http://localhost:8000/api/review/${activityBookId}`)
         .then((response) => response.json())
         .then((data) => {
             setBookingReviews(data.data);

@@ -15,7 +15,7 @@ export default function Recommendation() {
 
     useEffect(() => {
         aos.init({ duration: 2000 })
-        fetch('http://localhost:5100/')
+        fetch('http://localhost:8000/')
         .then((response) => response.json())
         .then((data) => {
             console.log(data.data);

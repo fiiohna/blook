@@ -17,7 +17,7 @@ const Reviews = () => {
     const reviewEdit = localStorage.getItem("reviewEdit");
     const navigate = useNavigate();
     useEffect(() => {
-        fetch(`http://localhost:5004/reviews/customer/${id}`)
+        fetch(`http://localhost:8000/api/review/customer/${id}`)
         .then((response) => response.json())
         .then((data) => {
         setReviews(data.data);

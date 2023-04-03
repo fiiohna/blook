@@ -12,7 +12,7 @@ const Pending = () => {
   const [showButton, setShowButton] = useState([]);
   const [error, setError] = useState('');
     useEffect(() => {
-        fetch(`http://localhost:5004/pendingReview/${id}`)
+        fetch(`http://localhost:8000/api/review/pendingReview/${id}`)
         .then((response) => 
         {
           if (!response.ok){
