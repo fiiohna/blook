@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import CreateReviewSuccessfulp from "../components/createReviewSuccessfulp/createReviewSuccessfulp";
+import CouponPaymentp from "../components/couponPaymentp/couponPaymentp";
 import { useNavigate } from "react-router-dom";
 
-export default function CreateReviewSuccessful() {
+export default function CouponPayment() {
     const id = localStorage.getItem("user_id");
     const navigate = useNavigate();
     useEffect(() => {
@@ -14,7 +14,7 @@ export default function CreateReviewSuccessful() {
 
     return (
         <>
-        <CreateReviewSuccessfulp></CreateReviewSuccessfulp>
+        <CouponPaymentp></CouponPaymentp>
         </>
     )
 }

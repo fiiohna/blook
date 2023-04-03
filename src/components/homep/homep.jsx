@@ -8,18 +8,21 @@ import {FiFacebook} from 'react-icons/fi'
 import {AiOutlineInstagram} from 'react-icons/ai'
 import {BsListTask} from 'react-icons/bs'
 import {TbApps} from 'react-icons/tb'
+import {MdLocationOn} from 'react-icons/md'
+import {GiHamburgerMenu} from 'react-icons/gi'
+import { useNavigate } from "react-router-dom";
 
 import aos from 'aos'
 import 'aos/dist/aos.css'
 
 const Homep = () => {
     // create react hook to add scroll animation
+    const id = localStorage.getItem("id");
+    const navigate = useNavigate();
 
     useEffect(() => {
         aos.init({duration: 2000})
     }, [])
-
-
 
     return (
         <section className='home'>
