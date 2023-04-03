@@ -8,7 +8,7 @@ const BookingDetail = () => {
     const activityBookId = localStorage.getItem("activityBookId");
     const [bookingActivity, setBookingActivity] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5001/activity/${activityBookId}`)
+        fetch(`http://localhost:8000/api/activity/${activityBookId}`)
         .then((response) => response.json())
         .then((data) => {
             setBookingActivity(data.data);

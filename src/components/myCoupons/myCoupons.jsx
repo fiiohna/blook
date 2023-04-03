@@ -6,7 +6,7 @@ const MyCoupons = () => {
     const [myCoupons, setMyCoupons] = useState([]);
     const id = localStorage.getItem("user_id");
         useEffect(() => {
-            fetch(`http://localhost:5013/coupon/linked/${id}`)
+            fetch(`http://localhost:8000/api/coupon/linked/${id}`)
             .then((response) => response.json())
             .then((details) => {
                 if (details.data.coupon.length == 0){

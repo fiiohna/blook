@@ -33,7 +33,7 @@ const EditReviewp = () => {
         e.preventDefault();
         // handle submit logic
         console.log(`Review submitted: ${id}, ${selectedOption}, ${selectedRating}, ${review}`);
-        fetch(`http://localhost:5004/review/${selectedOption}`,
+        fetch(`http://localhost:8000/api/review/${selectedOption}`,
         {
             method: 'PUT',
             headers: {
