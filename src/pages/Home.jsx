@@ -1,7 +1,4 @@
-import { TypeAnimation } from "react-type-animation";
 import React, { useState, useEffect } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import React, { useState } from 'react';
 import Homep from '../components/homep/homep';
 import Main from '../components/main/main';
 import Recommendation from "../components/recommendation/recommendation";
