@@ -90,6 +90,10 @@ export default function Booking({ activity }) {
                     <Form.Label>Quantity</Form.Label>
                     <Form.Control type="number" placeholder="Enter quantity" />
                 </Form.Group>
+
+                
+                
+
     
             </Form>
             </div>

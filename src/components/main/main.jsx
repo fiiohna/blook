@@ -257,10 +257,8 @@ const Main = () => {
                                         <p>{activity.description}</p>
                                     </div>
 
-                                    <button className='btn flex'>
-                                    <button onClick={handleBook} value={activity.id} className="btn">DETAILS/BOOK</button><HiOutlineClipboardCheck className='icon' />
-                                    {/* <NavLink to={`/activitydetail/${activity.id}`} className="navLink" >DETAILS/BOOK <HiOutlineClipboardCheck className='icon' /></NavLink> */}
-                                    </button>
+                                    <button onClick={handleBook} value={activity.id} className="btn flex">DETAILS/BOOK <HiOutlineClipboardCheck className='icon' /></button>
+                                    
                                 </div>
                             </div>
                         )
