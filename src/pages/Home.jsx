@@ -26,7 +26,7 @@ export default function Home() {
         <>
             <Homep></Homep>
             <Recommendation></Recommendation>
-            <Main></Main>      
+            <Main></Main>
         </>
     )
 }
