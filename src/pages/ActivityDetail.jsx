@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import activities from "../assets/data/activities"
 import { Container, Row, Col, Form, ListGroup } from 'reactstrap';
 // import Col from 'react-bootstrap/Col';
 import Booking from '../components/booking/booking';
@@ -61,7 +60,6 @@ export default function ActivityDetail() {
                 <Row>
                     <Col lg="6">
                         <div className="activityContent">
-                            <img src={"/"} alt="image" />
 
                             <div className="activityInfo">
                                 <h4 className="name">{name}</h4>
@@ -97,9 +95,6 @@ export default function ActivityDetail() {
                     bookingReviews.map((review)=>{
                         return (
                             <li className="row grid">
-                                {/* <p>{review.review_text}</p>
-                                <p>{review.rating}</p>
-                                <p>{review.created}</p> */}
                                 <Rating rating={review.rating} review_desc={review.review_text} date={review.created} firstname={review.customer_firstname} lastname={review.customer_lastname} activity_name={review.activity_name}/>
                             </li>
                         )
