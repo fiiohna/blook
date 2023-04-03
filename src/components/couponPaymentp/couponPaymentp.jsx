@@ -12,12 +12,12 @@ const CouponPaymentp = () => {
     const [pricePerPax, setPricePerPax] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5014/get_coupons/${id}`)
+        fetch(`http://localhost:8000/api/get_coupons/${id}`)
         .then((response) => response.json())
         .then((data) => {
         setMyCoupons(data.data);
         
-        fetch(`http://localhost:5001/activity/${activityBookId}`)
+        fetch(`http://localhost:8000/api/activity/${activityBookId}`)
         .then((response) => response.json())
         .then((data) => {
             setBookingActivity(data.data);
@@ -29,7 +29,7 @@ const CouponPaymentp = () => {
     function checkoutWithCoupon(e) {
         const coupon_id = e.currentTarget.value;
         return(
-            fetch(`http://localhost:5006/create-checkout-session/${coupon_id}`, {
+            fetch(`http://localhost:8000/api/payment/${coupon_id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

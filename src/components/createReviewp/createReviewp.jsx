@@ -14,7 +14,7 @@ const CreateReviewp = () => {
 
     const id = localStorage.getItem("user_id");
     useEffect(() => {
-        fetch(`http://localhost:5004/pendingReview/${id}`)
+        fetch(`http://localhost:8000/api/review/pendingReview/${id}`)
         .then((response) => response.json())
         .then((data) => {
         setOptions(data.data);
@@ -31,7 +31,7 @@ const CreateReviewp = () => {
         e.preventDefault();
         // handle submit logic
         console.log(`Review submitted: ${id}, ${selectedOption}, ${selectedRating}, ${review}`);
-        fetch('http://localhost:5004/review',
+        fetch('http://localhost:8000/api/review',
         {
             method: 'POST',
             headers: {
@@ -45,7 +45,7 @@ const CreateReviewp = () => {
             })
         })
         .then(
-            fetch(`http://localhost:5004/pendingReview/${id}/${selectedOption}`, 
+            fetch(`http://localhost:8000/api/review/pendingReview/${id}/${selectedOption}`, 
             {
                 method: 'DELETE',
                 headers: {

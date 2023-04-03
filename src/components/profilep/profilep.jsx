@@ -13,7 +13,7 @@ const ProfilePage = () =>{
     const [details, setDetails] = useState([]);
     const [test, setTest] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5003/customer/${id}`)
+        fetch(`http://localhost:8000/api/customer/${id}`)
         .then((response) => response.json())
         .then((details) => {
             setDetails(details.data);
@@ -21,7 +21,7 @@ const ProfilePage = () =>{
             // console.log(details.data);
         });
 
-        fetch(`http://localhost:5003/customer`)
+        fetch(`http://localhost:8000/api/customer`)
         .then((response) => response.json())
         .then((test) => {
             setTest(test.data);
@@ -29,7 +29,7 @@ const ProfilePage = () =>{
             // console.log(test.data);
         });
 
-        fetch(`http://localhost:5001/activity`)
+        fetch(`http://localhost:8000/api/activity`)
         .then((response) => response.json())
         .then((test) => {
             setTest(test.data);

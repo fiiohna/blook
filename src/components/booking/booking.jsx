@@ -19,14 +19,14 @@ export default function Booking({ activity }) {
     
 
     useEffect(() => {
-        fetch(`http://localhost:5001/activity/${activityBookId}`)
+        fetch(`http://localhost:8000/api/activity/${activityBookId}`)
         .then((response) => response.json())
         .then((data) => {
             setBookingActivity(data.data);
             setPricePerPax(data.data.price);
         })
 
-        fetch(`http://localhost:5013/coupon/linked/${id}`)
+        fetch(`http://localhost:8000/api/coupon/linked/${id}`)
             .then((response) => response.json())
             .then((details) => {
                 if (details.data.coupon.length == 0){
@@ -40,7 +40,7 @@ export default function Booking({ activity }) {
 
             });    
         
-        fetch(`http://localhost:5003/customer/${id}`)
+        fetch(`http://localhost:8000/api/customer/${id}`)
         .then((response) => response.json())
         .then((data) => {
             setCustomer(data.data);
@@ -61,7 +61,7 @@ export default function Booking({ activity }) {
 
     function activatecheckout() {
         return(
-            fetch('http://localhost:5006/create-checkout-session', {
+            fetch('http://localhost:8000/api/payment', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

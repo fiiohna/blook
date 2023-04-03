@@ -8,7 +8,7 @@ const Coupons = () => {
     const [coupons, setCoupons] = useState([]);
     const id = localStorage.getItem("user_id");
     useEffect(() => {
-        fetch(`http://localhost:5014/get_coupons/${id}`)
+        fetch(`http://localhost:8000/api/get_coupons/${id}`)
         .then((response) => response.json())
         .then((data) => {
         setCoupons(data.data);
@@ -21,7 +21,7 @@ const Coupons = () => {
         const points_deduct = e.currentTarget.value;
         const id = localStorage.getItem("user_id");
 
-        fetch(`http://localhost:5014/get_coupons/${id}/${points_deduct}`)
+        fetch(`http://localhost:8000/api/get_coupons/${id}/${points_deduct}`)
             .then(response => response.json())
             .then(data => {
                 // console.log(points_deduct);
