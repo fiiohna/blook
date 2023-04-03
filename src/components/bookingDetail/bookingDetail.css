@@ -1,1 +1,65 @@
-/*# sourceMappingURL=bookingDetail.css.map */
+:root {
+  /* --primary: #E58F65;
+    --secondary: #FFFFFF; */
+  --PrimaryColor: #E58F65;
+  --SecondaryColor: #D05353;
+  --gradientColor: #B8D0EB;
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 235);
+  --cardHover: rgb(255, 255, 255);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 -1rem;
+}
+@media (max-width: 769px) {
+  .row {
+    justify-content: center;
+  }
+}
+.row .mySingleCoupon {
+  border: 1px solid black;
+  margin: 3.5rem auto 1.5rem;
+  padding: 2rem 1rem;
+  border-radius: 2rem;
+  background: var(--whiteColor);
+}
+.row .mySingleCoupon .couponPicture {
+  display: flex;
+  justify-content: center;
+  height: 50%;
+}
+.row .mySingleCoupon .couponDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50%;
+}
+.row .mySingleCoupon .couponDetails .couponCode {
+  display: flex;
+  color: var(--PrimaryColor);
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.row .mySingleCoupon .couponDetails .btn {
+  margin-top: 1rem;
+  background-color: var(--PrimaryColor);
+  color: var(--whiteColor);
+  font-weight: 600;
+  gap: 0.5rem;
+}
+.row .mySingleCoupon .couponDetails .btn .redeem {
+  height: 15px;
+}/*# sourceMappingURL=bookingDetail.css.map */

@@ -8,9 +8,11 @@ import { HiOutlineLocationMarker } from 'react-icons/hi'
 import "../components/activityDetail/activityDetail.css"
 import { useState, useEffect } from 'react';
 import Rating from '../components/rating/rating';
+import { useNavigate } from "react-router-dom";
 
 export default function ActivityDetail() {
     const activityBookId = localStorage.getItem('activityBookId')
+    const navigate = useNavigate();
     const [bookingActivity, setBookingActivity] = useState([])
     const [bookingReviews, setBookingReviews] = useState([])
     const [customer, setCustomers] = useState([])
@@ -32,6 +34,10 @@ export default function ActivityDetail() {
         
 
     }, []);
+
+    function handleToBooking() {
+        navigate('/bookingdetail')
+    };
 
     // this is a static data, laer we will need to use API to load our data from database
     // const activity = activities.find(activity => activities.id === id)
@@ -95,6 +101,10 @@ export default function ActivityDetail() {
                     })
                 }
             </Container>
+            <Container>
+            <button onClick={handleToBooking} className='btn bookingbtn'>Book Now</button>
+            </Container>
+            
         </section>
 
 
