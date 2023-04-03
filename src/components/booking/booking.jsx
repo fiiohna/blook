@@ -128,11 +128,6 @@ export default function Booking({ activity }) {
                         
                     }
                 </div>
-
-                
-                
-
-    
             </Form>
             </div>
             <div className = "booking__bottom">

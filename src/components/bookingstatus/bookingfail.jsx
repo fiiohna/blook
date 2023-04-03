@@ -4,7 +4,7 @@ import "./bookingconfirm.scss";
 
 const BookingFailed = () => {
 return(
-    <div className='container'>
+    <div className='bookingcontainer'>
         <div className='card'>
           <h1 className='title'>Booking Failed</h1>
           <div className='icon-container'>
