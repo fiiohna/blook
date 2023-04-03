@@ -15,7 +15,7 @@ export default function Signinp() {
     const [dataInput, setDataInput] = useState("");
     const user_id = localStorage.getItem("user_id");
     const navigate = useNavigate();
-    
+
     const submitThis = () => {
         const info = { email: email, passw: passw };
         setDataInput([info]);
