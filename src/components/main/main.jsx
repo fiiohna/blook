@@ -178,7 +178,7 @@ const Main = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        aos.init({ duration: 2000 })
+        aos.init({ duration: 1000 })
         fetch('http://localhost:5001/activity')
         .then((response) => response.json())
         .then((data) => {
