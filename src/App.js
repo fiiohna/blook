@@ -18,9 +18,9 @@ import EditReview from "./pages/EditReview";
 import BookingConfirmation from "./components/bookingstatus/bookingconfirm";
 import BookingFailed from "./components/bookingstatus/bookingfail";
 import BookingDetails from "./pages/BookingDetail";
-import Vendor from "./pages/Vendor";
 import VendorVerify from "./components/vendorverify/vendorverify";
 import CouponPayment from "./pages/CouponPayment";
+import NoPermission from "./pages/NoPermission";
 // import PaymentSuccess from "./components/payment/paymentsuccess";
 
 const router = createBrowserRouter(
@@ -43,6 +43,7 @@ const router = createBrowserRouter(
         <Route path="signup" element={<Signupp />}/>
       </Route>
       <Route path="vendorverify" element={<VendorVerify />} />
+      <Route path="nopermission" element={<NoPermission />} />
     </Route>
   )
 )
