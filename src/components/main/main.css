@@ -128,37 +128,6 @@
   font-size: 18px;
 }
 
-.main  .activitiesSearchItem {
-  text-align: center;
-  padding-top: 20px;
-}
-
-.main .activitiesSearchItem .activitiesSearchText{
-  width: 75%;
-  border: 2px solid var(--gradientColor);
-  box-sizing: border-box;
-  padding: 16px 32px;
-}
-
-input.activitiesSearchText[type=text]:focus {
-  background-color: var(--gradientColor);
-  color: black;
-}
-
-button.activitiesSubmit {
-  padding: 16px 32px;
-  font-size: 17px;
-  border: 1px solid var(--gradientColor);
-  cursor: pointer;
-  background-color: var(--PrimaryColor);
-  border: 2px solid var(--PrimaryColor);
-}
-
-button.activitiesSubmit:hover {
-  background-color: var(--SecondaryColor);
-  border: 2px solid var(--SecondaryColor)
-}
-
 @media screen and (max-width: 500px) {
   .title {
     font-size: 1.5rem;

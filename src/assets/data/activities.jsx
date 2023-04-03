@@ -1,6 +1,9 @@
 import img from "./img.jpg";
 import img2 from "./img2.jpg";
 import img3 from "./img3.jpg";
+import React, { useState, useEffect } from "react";
+
+
 
 const activities = [
     {

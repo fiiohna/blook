@@ -171,24 +171,53 @@ const ActivitiesData = [
 ]
 
 const Main = () => {
-    const [activities, setActivities] = useState(ActivitiesData)
+    // const [activities, setActivities] = useState(ActivitiesData)
+    const [activities, setActivities] = useState([])
     const [searchQuery, setSearchQuery] = useState('')
+    localStorage.getItem("activityBookId")
 
     useEffect(() => {
         aos.init({ duration: 2000 })
+        fetch('http://localhost:5001/activity')
+        .then((response) => response.json())
+        .then((data) => {
+            setActivities(data.data.activities);
+        });
     }, [])
 
     const handleSearch = (event) => {
         setSearchQuery(event.target.value);
       };
     
-      useEffect(() => {
-        const filteredActivities = ActivitiesData.filter((activity) =>
+    //   useEffect(() => {
+    //     const filteredActivities = ActivitiesData.filter((activity) =>
+    //       activity.name.toLowerCase().includes(searchQuery.toLowerCase())
+    //     );
+    //     setActivities(filteredActivities);
+    //   }, [searchQuery]);
+    
+    useEffect(() => {
+        if (searchQuery !== '') {
+        const filteredActivities = activities.filter((activity) =>
           activity.name.toLowerCase().includes(searchQuery.toLowerCase())
         );
         setActivities(filteredActivities);
-      }, [searchQuery]);
+        }else {
+            fetch('http://localhost:5001/activity')
+            .then((response) => response.json())
+            .then((data) => {
+                setActivities(data.data.activities);
+        });
+        }
+    
+    
+    }, [searchQuery]);
 
+    const handleBook = (e) => {
+        localStorage.setItem("activityBookId", e.target.value);
+        // console.log(e.target.value);
+    };
+    
     return (
         <section className="main container section">
             <div className="activitiesSearchItem">
@@ -227,7 +256,7 @@ const Main = () => {
                                     </div>
 
                                     <button className='btn flex'>
-                                    <NavLink to= "/activitydetail" className="navLink" style={{color:'black'}}>DETAILS/BOOK </NavLink><HiOutlineClipboardCheck className='icon' />
+                                    <NavLink to="/activitydetail" className="navLink" style={{color:'black'}}><button onClick={handleBook} value={activity.id} className="btn">DETAILS/BOOK</button></NavLink><HiOutlineClipboardCheck className='icon' />
                                     {/* <NavLink to={`/activitydetail/${activity.id}`} className="navLink" >DETAILS/BOOK <HiOutlineClipboardCheck className='icon' /></NavLink> */}
                                     </button>
                                 </div>
