@@ -12,10 +12,10 @@ const CouponPaymentp = () => {
     const [pricePerPax, setPricePerPax] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5014/get_coupons/${id}`)
+        fetch(`http://localhost:5013/coupon/linked/${id}`)
         .then((response) => response.json())
         .then((data) => {
-        setMyCoupons(data.data);
+        setMyCoupons(data.data.coupon);
         
         fetch(`http://localhost:5001/activity/${activityBookId}`)
         .then((response) => response.json())
