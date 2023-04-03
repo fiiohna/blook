@@ -24,7 +24,7 @@ const Coupons = () => {
         fetch(`http://localhost:5014/get_coupons/${id}/${points_deduct}`)
             .then(response => response.json())
             .then(data => {
-                console.log(points_deduct);
+                // console.log(points_deduct);
         })
         
         window.location.reload(false);

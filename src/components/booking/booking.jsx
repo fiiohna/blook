@@ -1,9 +1,36 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import "./booking.css";
+import { MdRedeem } from "react-icons/md";
 import { Form, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 
 export default function Booking({ activity }) {
     const { fees } = activity
+    const id = localStorage.getItem("user_id");
+    const [myCoupons, setMyCoupons] = useState([]);
+    const [bookingActivity, setBookingActivity] = useState([]);
+    const activityBookId = localStorage.getItem("activityBookId");
+
+    useEffect(() => {
+        fetch(`http://localhost:5001/activity/${activityBookId}`)
+        .then((response) => response.json())
+        .then((data) => {
+            setBookingActivity(data.data);
+        })
+
+        fetch(`http://localhost:5013/coupon/linked/${id}`)
+            .then((response) => response.json())
+            .then((details) => {
+                if (details.data.coupon.length == 0){
+                    setMyCoupons([{id: "0", coupon_code: "No coupons yet!"}]);
+                }
+                else{
+                    setMyCoupons(details.data.coupon);
+                    // console.log(details.data.coupon);
+                }
+                console.log(details.data.coupon);
+
+            });       
+    }, []);
 
     function activatecheckout() {
         return(
@@ -33,10 +60,9 @@ export default function Booking({ activity }) {
     return (
         
             <div className='booking'>
+                
             <div className = "booking__top d-flex align-items-scenter justify-content-between">
-                <h1>Booking</h1>
-                <h3>${fees}</h3>
-                {fees}
+            <h1 className="bookingHeader">{bookingActivity.name}</h1>
             </div>
            
             <div className = "booking__form">
@@ -81,6 +107,31 @@ export default function Booking({ activity }) {
                     <Form.Label>Quantity</Form.Label>
                     <Form.Control type="number" placeholder="Enter quantity" />
                 </Form.Group>
+
+
+                <h1>My Coupons</h1> 
+                <div className="row flex">
+                    {
+                        myCoupons.map((coupon) => {
+                            return (
+                                <div className="mySingleCoupon" key={coupon.coupon_customer_id}>
+                                    <div className="couponPicture">
+                                        <MdRedeem className="icon redeem"/>
+                                    </div>
+                                    <div className="couponDetails">
+                                        <span className="couponCode">{coupon.coupon_point}</span>
+                                        <h3 className="couponDesc">Get ${coupon.coupon_point} off your next activity!</h3>
+                                    </div>
+                                </div>
+                            );
+                        })  
+                        
+                    }
+                </div>
+
+                
+                
+
     
             </Form>
             </div>
@@ -92,10 +143,9 @@ export default function Booking({ activity }) {
                     </ListGroupItem>
                 </ListGroup>
 
-                <Button onClick={activatecheckout} className = "btn primary__btn w-100 mt-4">Book Now</Button>
+                <Button onClick={activatecheckout} className = "btn primary__btn w-100 mt-4">Checkout</Button>
             </div>
         </div>
-        
-        
+       
     )
 }
