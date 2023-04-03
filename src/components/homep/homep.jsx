@@ -1,13 +1,6 @@
 import React, {useEffect} from 'react'
 import './homep.css'
 import video3 from '../../assets/video3.mp4'
-// import {GrLocation} from 'react-icons/gr'
-import {HiFilter} from 'react-icons/hi'
-import {FaTripadvisor} from 'react-icons/fa'
-import {FiFacebook} from 'react-icons/fi'
-import {AiOutlineInstagram} from 'react-icons/ai'
-import {BsListTask} from 'react-icons/bs'
-import {TbApps} from 'react-icons/tb'
 
 import aos from 'aos'
 import 'aos/dist/aos.css'

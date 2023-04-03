@@ -67,7 +67,6 @@
 }
 
 .recommendation .secContent .singleDestination:hover {
-    background: var(--cardHover);
     box-shadow: 1 4px 4px rgba(85, 85, 114, 0.549);
     transition: 0.3s ease;
 }
@@ -86,9 +85,6 @@
     transition: 2s ease;
 }
 
-.recommendation .secContent .singleDestination .imageDiv:hover img {
-    transform: scale(1.1);
-}
 
 .recommendation .secContent .singleDestination .cardInfo {
     padding: 1rem;

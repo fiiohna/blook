@@ -37,9 +37,6 @@ const Reviews = () => {
             reviews.map((review) => {
                 return (
                       <li className="row grid">
-                          {/* <p>{review.review_text}</p>
-                          <p>{review.rating}</p>
-                          <p>{review.created}</p> */}
                           <RatingProfile rating={review.rating} review_desc={review.review_text} date={review.created} activity_name={review.activity_name}/>
                           <button value={JSON.stringify(review)} onClick={handleEdit} className="btn reviewBtn">Edit</button>
                       </li>
