@@ -17,6 +17,7 @@ import Signupp from "./components/loginp/signupp";
 import EditReview from "./pages/EditReview";
 import BookingConfirmation from "./components/bookingstatus/bookingconfirm";
 import BookingFailed from "./components/bookingstatus/bookingfail";
+import BookingDetails from "./pages/BookingDetail";
 // import PaymentSuccess from "./components/payment/paymentsuccess";
 
 const router = createBrowserRouter(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       {/* Need to route the activity.id to the below path */}
       {/* <Route path={`/activitydetail/${activity.id}`} element={<ActivityDetail />} /> */}
       <Route path="activitydetail" element={<ActivityDetail />} />
+      <Route path="bookingdetail" element={<BookingDetails/>} />
       <Route path="createreview" element={<CreateReview />} />
       <Route path="createreviewsuccessful" element={<CreateReviewSuccessful/>} />
       <Route path="editreview" element={<EditReview/>} />

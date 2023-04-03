@@ -11,27 +11,43 @@ import { AiOutlineStar } from "react-icons/ai";
 import styled from "styled-components";
 import {NavLink} from "react-router-dom"
 import { useState, useEffect } from 'react';
+import Rating from '../components/rating/rating';
+import { useNavigate } from "react-router-dom";
 
 export default function ActivityDetail() {
     const activityBookId = localStorage.getItem('activityBookId')
+    const navigate = useNavigate();
     const [bookingActivity, setBookingActivity] = useState([])
+    const [bookingReviews, setBookingReviews] = useState([])
+    const [customer, setCustomers] = useState([])
 
     useEffect(() => {
         fetch(`http://localhost:5001/activity/${activityBookId}`)
         .then((response) => response.json())
         .then((data) => {
             setBookingActivity(data.data);
+            // console.log(data.data);
+        })
+
+        fetch(`http://localhost:5004/review/${activityBookId}`)
+        .then((response) => response.json())
+        .then((data) => {
+            setBookingReviews(data.data);
             console.log(data.data);
         })
         
 
     }, []);
 
+    function handleToBooking() {
+        navigate('/bookingdetail')
+    };
+
     // this is a static data, laer we will need to use API to load our data from database
     // const activity = activities.find(activity => activities.id === id)
 
     // destructure properties from activity object
-    const { imgSrc, name, address, price, description } = bookingActivity;
+    const { name, address, price, description } = bookingActivity;
 
     // const {totalRating, avgRating} = calculateAvgRating
 
@@ -44,7 +60,7 @@ export default function ActivityDetail() {
                 <Row>
                     <Col lg="6">
                         <div className="activityContent">
-                            <img src={imgSrc} alt="image" />
+                            <img src={"/"} alt="image" />
 
                             <div className="activityInfo">
                                 <h4 className="name">{name}</h4>
@@ -125,13 +141,28 @@ export default function ActivityDetail() {
 
 
                     <Col lg="4">
-
-                        <Booking activity={bookingActivity}></Booking>
-
-
+                                    
                     </Col>
                 </Row>
             </Container>
+            <Container>
+                {
+                    bookingReviews.map((review)=>{
+                        return (
+                            <li className="row grid">
+                                {/* <p>{review.review_text}</p>
+                                <p>{review.rating}</p>
+                                <p>{review.created}</p> */}
+                                <Rating rating={review.rating} review_desc={review.review_text} date={review.created} firstname={review.customer_firstname} lastname={review.customer_lastname} activity_name={review.activity_name}/>
+                            </li>
+                        )
+                    })
+                }
+            </Container>
+            <Container>
+            <button onClick={handleToBooking} className='btn bookingbtn'>Book Now</button>
+            </Container>
+            
         </section>
 
 
