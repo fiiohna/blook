@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, Outlet, Routes, Route } from "react-router-dom";
+import { NavLink, Outlet, Routes, Route, useNavigate } from "react-router-dom";
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -14,11 +14,13 @@ export default function Signinp() {
     const [passw, setPassw] = useState("");
     const [dataInput, setDataInput] = useState("");
     const user_id = localStorage.getItem("user_id");
-
+    const navigate = useNavigate();
+    
     const submitThis = () => {
         const info = { email: email, passw: passw };
         setDataInput([info]);
         localStorage.setItem("user_id", email);
+        navigate('/');
     };
 
     return (
@@ -51,10 +53,7 @@ export default function Signinp() {
                         />
                         </div>
                     </div>
-                    <button type="submit" onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href='/';
-                    }} >Login</button>
+                    <button type="submit">Login</button>
                 </form>
 
             </Row>
