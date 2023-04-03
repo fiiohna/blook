@@ -9,6 +9,12 @@ import { NavLink, Outlet } from "react-router-dom"
 const Navbar = () => {
     const id = localStorage.getItem('user_id')
     const [active, setActive] = useState('navBar')
+
+    const handleLogOut = () => {
+        localStorage.removeItem('user_id')
+        window.location.reload();
+    }
+        
     
 
     const showNav = () => {
@@ -41,7 +47,7 @@ const Navbar = () => {
                             }   
                         </li>
                         <li className='navItem'>
-                            {id ? null : 
+                            {id ? (<button onClick={handleLogOut} className="navLink">Log Out</button>) : 
                                 (<NavLink to="/login/signin" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Login/Sign up</NavLink>)
                             }
                         </li>
