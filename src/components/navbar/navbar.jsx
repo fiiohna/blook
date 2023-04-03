@@ -7,7 +7,9 @@ import { NavLink, Outlet } from "react-router-dom"
 
 
 const Navbar = () => {
+    const id = localStorage.getItem('user_id')
     const [active, setActive] = useState('navBar')
+    
 
     const showNav = () => {
         setActive('navBar activeNavBar')
@@ -29,13 +31,19 @@ const Navbar = () => {
                 <div className={active} >
                     <ul className="navLists flex">
                         <li className="navItem">
-                            <NavLink to="/" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Home</NavLink>
+                            {id ?
+                                (<NavLink to="/" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Home</NavLink>) : null
+                            }
                         </li>
                         <li className="navItem">
-                            <NavLink to="/profile" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Profile</NavLink>
+                            {id ?
+                                (<NavLink to="/profile" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Profile</NavLink>) : null
+                            }   
                         </li>
                         <li className='navItem'>
-                            <NavLink to="/login/signin" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Login/Sign up</NavLink>
+                            {id ? null : 
+                                (<NavLink to="/login/signin" className="navLink" style={({ isActive }) => { return { color: isActive ? 'white' : '', background: isActive ? '#E58F65' : "", padding: isActive ? "6px" : '', borderRadius: isActive ? "12px" : '', textDecoration: "none" } }}>Login/Sign up</NavLink>)
+                            }
                         </li>
                     </ul>
 
