@@ -49,6 +49,8 @@ const ActivitiesData = [
 export default function Recommendation() {
 
     const [recommended, setRecommended] = useState([])
+    const navigate = useNavigate();
+
     useEffect(() => {
         aos.init({ duration: 2000 })
         fetch('http://localhost:5100/')
@@ -58,6 +60,12 @@ export default function Recommendation() {
             setRecommended(data.data);
         });
     }, [])
+
+    const handleBook = (e) => {
+        localStorage.setItem("activityBookId", e.target.value);
+        navigate("/activitydetail");
+        // console.log(e.target.value);
+    };
 
 
     return (
@@ -103,8 +111,8 @@ export default function Recommendation() {
                                             <p>{description}</p>
                                         </div>
 
-                                        <button className='btn flex'>
-                                        <NavLink to= "/activitydetail" className="navLink" style={{color:'black'}}>DETAILS/BOOK</NavLink><HiOutlineClipboardCheck className='icon' />
+                                        <button onClick={handleBook} value={id} className='btn flex'>
+                                            DETAILS/BOOK<HiOutlineClipboardCheck className='icon' />
                                         </button>
                                     </div>
                                 </div>

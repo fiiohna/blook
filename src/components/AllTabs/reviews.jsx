@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./reviews.css";
 
-import Rating from "../rating/rating";
+import RatingProfile from "../rating/ratingProfile";
 
 
 const Reviews = () => {
@@ -17,10 +17,11 @@ const Reviews = () => {
         .then((response) => response.json())
         .then((data) => {
         setReviews(data.data);
+        console.log(data.data)
         if (data.data.length == 0) {
             setEmpty(true);
         }
-        console.log(data.data)
+        
       });
 }, [])
 
@@ -39,7 +40,7 @@ const Reviews = () => {
                           {/* <p>{review.review_text}</p>
                           <p>{review.rating}</p>
                           <p>{review.created}</p> */}
-                          <Rating rating={review.rating} review_desc={review.review_text} date={review.created} name={review.activity_name}/>
+                          <RatingProfile rating={review.rating} review_desc={review.review_text} date={review.created} activity_name={review.activity_name}/>
                           <button value={JSON.stringify(review)} onClick={handleEdit} className="btn reviewBtn">Edit</button>
                       </li>
                 )

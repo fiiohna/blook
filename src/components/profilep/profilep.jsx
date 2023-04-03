@@ -11,6 +11,7 @@ import MyCoupons from '../myCoupons/myCoupons';
 const ProfilePage = () =>{
     const id = localStorage.getItem("user_id");
     const [details, setDetails] = useState([]);
+    const [test, setTest] = useState([]);
     useEffect(() => {
         fetch(`http://localhost:5003/customer/${id}`)
         .then((response) => response.json())
@@ -18,6 +19,22 @@ const ProfilePage = () =>{
             setDetails(details.data);
             // console.log(details.data.customers[id]);
             // console.log(details.data);
+        });
+
+        fetch(`http://localhost:5003/customer`)
+        .then((response) => response.json())
+        .then((test) => {
+            setTest(test.data);
+            // console.log(details.data.customers[id]);
+            // console.log(test.data);
+        });
+
+        fetch(`http://localhost:5001/activity`)
+        .then((response) => response.json())
+        .then((test) => {
+            setTest(test.data);
+            // console.log(details.data.customers[id]);
+            // console.log(test.data);
         });
 
 
