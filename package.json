@@ -24,6 +24,7 @@
     "react-scripts": "5.0.1",
     "react-type-animation": "^3.0.1",
     "reactstrap": "^9.1.8",
+    "strap": "^0.1.0",
     "styled": "^1.0.0",
     "styled-components": "^5.3.9",
     "web-vitals": "^2.1.4"

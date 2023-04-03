@@ -1,26 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import './createReviewp.css'; // import the SCSS file
+import './editReviewp.css'; // import the SCSS file
 
-const CreateReviewp = () => {
-    const [review, setReview] = useState('');
-    const [options, setOptions] = useState([]);
+const EditReviewp = () => {
+    const reviewEdit = JSON.parse(localStorage.getItem("reviewEdit"));
+    const activity_id = reviewEdit.activity_id;
+    const rating = reviewEdit.rating;
+    const review_text = reviewEdit.review_text;
+    const [review, setReview] = useState(review_text);
     const [ratings, setRatings] = useState([1,2,3,4,5]);
-    const [selectedOption, setSelectedOption] = useState('');
-    const [selectedRating, setSelectedRating] = useState('');
+    const [selectedOption, setSelectedOption] = useState(activity_id);
+    const [selectedRating, setSelectedRating] = useState(rating);
 
     const navigate = useNavigate();
-
-
     const id = localStorage.getItem("user_id");
-    useEffect(() => {
-        fetch(`http://localhost:5004/pendingReview/${id}`)
-        .then((response) => response.json())
-        .then((data) => {
-        setOptions(data.data);
-        console.log(data.data);
-      });
-}, [])
+    
+
+//     useEffect(() => {
+//         fetch(`http://localhost:5004/pendingReview/${id}`)
+//         .then((response) => response.json())
+//         .then((data) => {
+//         setOptions(data.data);
+//       });
+// }, [])
 
 
 
@@ -31,9 +33,9 @@ const CreateReviewp = () => {
         e.preventDefault();
         // handle submit logic
         console.log(`Review submitted: ${id}, ${selectedOption}, ${selectedRating}, ${review}`);
-        fetch('http://localhost:5004/review',
+        fetch(`http://localhost:5004/review/${selectedOption}`,
         {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -44,16 +46,7 @@ const CreateReviewp = () => {
                 review_text: review
             })
         })
-        .then(
-            fetch(`http://localhost:5004/pendingReview/${id}/${selectedOption}`, 
-            {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            })
-        )
-        setReview('');
+
         navigate("/createreviewsuccessful");
     };
     
@@ -68,18 +61,9 @@ const CreateReviewp = () => {
   return (
     <form className="create-review-form" onSubmit={handleSubmit}>
         <div>
-            <h1>Write a review</h1>
+            <h1>Edit your review</h1>
         </div>
         <div>
-            <select required value={selectedOption} onChange={handleOptionChange}>
-                <option value="">Select an activity</option>
-                {options.map((option) => (
-                <option key={option.num} value={option.activity_id}>
-                    {option.activity_name}
-                </option>
-                ))}
-            </select>
-
             <select required value={selectedRating} onChange={handleRatingChange}>
                 <option value="">Select a rating</option>
                 {ratings.map((rating, index) => (
@@ -98,4 +82,4 @@ const CreateReviewp = () => {
   )
 }
 
-export default CreateReviewp;
+export default EditReviewp;

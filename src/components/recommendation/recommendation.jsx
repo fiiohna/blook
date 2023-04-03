@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './recommendation.css'
 import img from '../../assets/img.jpg'
 import img2 from '../../assets/img2.jpg'
@@ -45,10 +45,24 @@ const ActivitiesData = [
     },
 ]
 
+
 export default function Recommendation() {
+
+    const [recommended, setRecommended] = useState([])
     useEffect(() => {
         aos.init({ duration: 2000 })
+        fetch('http://localhost:5100/')
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data.data);
+            setRecommended(data.data);
+        });
     }, [])
+
+    const handleBook = (e) => {
+        localStorage.setItem("activityBookId", e.target.value);
+        // console.log(e.target.value);
+    };
 
 
     return (
@@ -72,7 +86,7 @@ export default function Recommendation() {
                 <div className="secContent grid">
 
                     {
-                        ActivitiesData.map(({ id, imgSrc, name, address, grade, price, description }) => {
+                        recommended.map(({ id, imgSrc, name, address, grade, price, description }) => {
                             return (
 
                                 <div key={id} className="singleDestination">
@@ -95,7 +109,7 @@ export default function Recommendation() {
                                         </div>
 
                                         <button className='btn flex'>
-                                        <NavLink to= "/activitydetail" className="navLink" style={{color:'black'}}>DETAILS/BOOK</NavLink><HiOutlineClipboardCheck className='icon' />
+                                        <NavLink to="/activitydetail" className="navLink" style={{color:'black'}}><button onClick={handleBook} value={recommended.id} className="btn">DETAILS/BOOK</button></NavLink><HiOutlineClipboardCheck className='icon' />
                                         </button>
                                     </div>
                                 </div>
@@ -107,7 +121,7 @@ export default function Recommendation() {
 
         </section>
 
-
+ 
         // useEffect(() => {
         //     aos.init({ duration: 2000 })
         // }, [])

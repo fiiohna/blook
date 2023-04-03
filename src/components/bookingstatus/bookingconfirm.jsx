@@ -21,7 +21,7 @@ const BookingConfirmation = () => {
     
     // if(details.data.status == "YES"){
         return (
-            <div className='container'>
+            <div className='bookingcontainer'>
             <div className='card'>
               <h1 className='title'>Booking Confirmed</h1>
               <div className='icon-container'>

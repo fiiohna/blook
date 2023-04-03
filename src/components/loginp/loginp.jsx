@@ -1,5 +1,5 @@
 import React from "react";
-// import "./loginp.css";
+import "./loginp.css";
 import { NavLink, Outlet } from "react-router-dom";
 
 import Container from 'react-bootstrap/Container';
@@ -11,6 +11,7 @@ import aos from "aos";
 import "aos/dist/aos.css";
 
 export default function LoginPage() {
+
 	return (
 		<section className="login">
 			<Container>

@@ -13,9 +13,12 @@ export default function Signinp() {
     const [email, setEmail] = useState("");
     const [passw, setPassw] = useState("");
     const [dataInput, setDataInput] = useState("");
+    const user_id = localStorage.getItem("user_id");
+
     const submitThis = () => {
         const info = { email: email, passw: passw };
         setDataInput([info]);
+        localStorage.setItem("user_id", email);
     };
 
     return (
@@ -48,7 +51,10 @@ export default function Signinp() {
                         />
                         </div>
                     </div>
-                    <button type="submit">Login</button>
+                    <button type="submit" onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href='/';
+                    }} >Login</button>
                 </form>
 
             </Row>

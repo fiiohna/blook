@@ -10,17 +10,32 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { AiOutlineStar } from "react-icons/ai";
 import styled from "styled-components";
 import {NavLink} from "react-router-dom"
+import { useState, useEffect } from 'react';
 
 export default function ActivityDetail() {
-    const { id } = useParams()
+    const activityBookId = localStorage.getItem('activityBookId')
+    const [bookingActivity, setBookingActivity] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:5001/activity/${activityBookId}`)
+        .then((response) => response.json())
+        .then((data) => {
+            setBookingActivity(data.data);
+            console.log(data.data);
+        })
+        
+
+    }, []);
 
     // this is a static data, laer we will need to use API to load our data from database
-    const activity = activities.find(activity => activities.id === id)
+    // const activity = activities.find(activity => activities.id === id)
 
     // destructure properties from activity object
-    const { imgSrc, name, address, price, description } = activity
+    const { imgSrc, name, address, price, description } = bookingActivity;
 
     // const {totalRating, avgRating} = calculateAvgRating
+
+    
 
     // This component will display the details of the activity
     return (
@@ -111,7 +126,7 @@ export default function ActivityDetail() {
 
                     <Col lg="4">
 
-                        <Booking activity={activity}></Booking>
+                        <Booking activity={bookingActivity}></Booking>
 
 
                     </Col>
