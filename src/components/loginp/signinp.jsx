@@ -51,7 +51,10 @@ export default function Signinp() {
                         />
                         </div>
                     </div>
-                    <button type="submit">Login</button>
+                    <button type="submit" onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href='/';
+                    }} >Login</button>
                 </form>
 
             </Row>

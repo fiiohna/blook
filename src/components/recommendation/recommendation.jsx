@@ -63,7 +63,10 @@ export default function Recommendation() {
 
     const handleBook = (e) => {
         localStorage.setItem("activityBookId", e.target.value);
+<<<<<<< HEAD
         navigate("/activitydetail");
+=======
+>>>>>>> 58624c74bbd146b7a3742f2ae26814e1c5e60394
         // console.log(e.target.value);
     };
 
