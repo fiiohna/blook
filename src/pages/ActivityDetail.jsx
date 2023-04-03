@@ -10,6 +10,8 @@ import Rating from '../components/rating/rating';
 import { useNavigate } from "react-router-dom";
 
 export default function ActivityDetail() {
+    const id = localStorage.getItem("user_id");
+
     const activityBookId = localStorage.getItem('activityBookId')
     const navigate = useNavigate();
     const [bookingActivity, setBookingActivity] = useState([])
@@ -17,6 +19,9 @@ export default function ActivityDetail() {
     const [customer, setCustomers] = useState([])
 
     useEffect(() => {
+        if (id === null) {
+            navigate("/login/signin");
+        }
         fetch(`http://localhost:5001/activity/${activityBookId}`)
         .then((response) => response.json())
         .then((data) => {
