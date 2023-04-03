@@ -1,9 +1,19 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import "./booking.css";
 import { Form, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 
 export default function Booking({ activity }) {
     const { fees } = activity
+    const [bookingActivity, setBookingActivity] = useState([]);
+    const activityBookId = localStorage.getItem("activityBookId");
+
+    useEffect(() => {
+        fetch(`http://localhost:5001/activity/${activityBookId}`)
+        .then((response) => response.json())
+        .then((data) => {
+            setBookingActivity(data.data);
+        })
+    }, []);
 
     function activatecheckout() {
         return(
@@ -33,10 +43,9 @@ export default function Booking({ activity }) {
     return (
         
             <div className='booking'>
+                
             <div className = "booking__top d-flex align-items-scenter justify-content-between">
-                <h1>Booking</h1>
-                <h3>${fees}</h3>
-                {fees}
+            <h1 className="bookingHeader">{bookingActivity.name}</h1>
             </div>
            
             <div className = "booking__form">
@@ -92,10 +101,9 @@ export default function Booking({ activity }) {
                     </ListGroupItem>
                 </ListGroup>
 
-                <Button onClick={activatecheckout} className = "btn primary__btn w-100 mt-4">Book Now</Button>
+                <Button onClick={activatecheckout} className = "btn primary__btn w-100 mt-4">Checkout</Button>
             </div>
         </div>
-        
-        
+       
     )
 }
