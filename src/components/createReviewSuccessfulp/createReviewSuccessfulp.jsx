@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './createReviewSuccessfulp.css'; // import the SCSS file
 
-const CreateReviewp = () => {
+const CreateReviewSuccessfulp = () => {
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         navigate("/profile");
@@ -16,4 +16,4 @@ const CreateReviewp = () => {
   )
 }
 
-export default CreateReviewp;
+export default CreateReviewSuccessfulp;
