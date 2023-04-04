@@ -5,6 +5,9 @@ import "./pending.css";
 
 const Pending = () => {
   const id = localStorage.getItem("user_id");
+  if (!id){
+    window.location.href = '/login/signin'
+  }
   const [pending, setPending] = useState([]);
   const [showButton, setShowButton] = useState([]);
   const [error, setError] = useState('');

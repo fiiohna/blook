@@ -6,15 +6,19 @@ import { useNavigate, useParams } from "react-router-dom";
 
 export default function Booking({ activity }) {
     const id = localStorage.getItem("user_id");
+    if (!id){
+      window.location.href = '/login/signin'
+    }
     const [bookingActivity, setBookingActivity] = useState([]);
     const [myCoupons, setMyCoupons] = useState([]);
     const activityBookId = localStorage.getItem("activityBookId");
     const [customer, setCustomer] = useState([]);
     const navigate = useNavigate();
-    const [quantity, setQuantity] = useState([0]);
-    const [date, setDate] = useState([]);
+    const [quantity, setQuantity] = useState([1]);
     const [pricePerPax, setPricePerPax] = useState([]);
-    
+    const current = new Date();
+    const Today = `${current.getFullYear()}-${current.getMonth()}-${current.getDate()}/}`;
+    const [date, setDate] = useState(Today);
 
     
 
@@ -124,7 +128,7 @@ export default function Booking({ activity }) {
                         onChange={(e) => {
                             setQuantity(e.target.value);
                             }} value={quantity}
-                type="number" min="0"/>
+                type="number" min="1" required/>
                     </Form.Group>      
 
                     <Form.Group className="flex mb-3" id="phone">
@@ -132,7 +136,7 @@ export default function Booking({ activity }) {
                         <Form.Control 
                         onChange={(e) => {
                             setDate(e.target.value);
-                            }} type="date" />
+                            }} type="date" value={date} required/>
                     </Form.Group>
 
                 </Form>

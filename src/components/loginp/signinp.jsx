@@ -8,6 +8,7 @@ import "./sign.css";
 
 import aos from "aos";
 import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 export default function Signinp() {
     const [email, setEmail] = useState("");
@@ -16,11 +17,14 @@ export default function Signinp() {
     const user_id = localStorage.getItem("user_id");
     const navigate = useNavigate();
 
+
     const submitThis = () => {
         const info = { email: email, passw: passw };
         setDataInput([info]);
         localStorage.setItem("user_id", email);
         navigate('/');
+        navigate(0);
+        
     };
 
     return (

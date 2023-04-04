@@ -7,9 +7,13 @@ import RatingProfile from "../rating/ratingProfile";
 
 
 const Reviews = () => {
+    const id = localStorage.getItem("user_id");
+    if (!id){
+      window.location.href = '/login/signin'
+    }
     const [reviews, setReviews] = useState([]);
     const [empty, setEmpty] = useState(false);
-    const id = localStorage.getItem("user_id");
+    
     const reviewEdit = localStorage.getItem("reviewEdit");
     const navigate = useNavigate();
     useEffect(() => {
