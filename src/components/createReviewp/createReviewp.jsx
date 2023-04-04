@@ -31,7 +31,7 @@ const CreateReviewp = () => {
         e.preventDefault();
         // handle submit logic
         console.log(`Review submitted: ${id}, ${selectedOption}, ${selectedRating}, ${review}`);
-        fetch('http://localhost:8000/api/review',
+        fetch('http://localhost:8000/api/addreview',
         {
             method: 'POST',
             headers: {
@@ -44,15 +44,7 @@ const CreateReviewp = () => {
                 review_text: review
             })
         })
-        .then(
-            fetch(`http://localhost:8000/api/review/pendingReview/${id}/${selectedOption}`, 
-            {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            })
-        )
+        
         setReview('');
         navigate("/createreviewsuccessful");
     };
