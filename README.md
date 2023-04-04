@@ -10,9 +10,7 @@
 ## <a name="about"></a>About
 Blook is an activity bookings app that allows customers to view all available activities offered and book their desired activity.
 
-## <a name="getting-started"></a>Getting Started
-
-# Getting Started with Create React App
+## <a name="getting-started"></a>Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
